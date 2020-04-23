@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 #  wrapper_script.py
@@ -60,51 +60,9 @@ def test_docker():
 	return bool(distutils.spawn.find_executable("docker"))
 
 
-def main():
-	import argparse
-	
-	parser = argparse.ArgumentParser(description=__doc__)
-	parser.add_argument('input_file', help='The MSP file to convert.', nargs="?")
-	parser.add_argument('output_dir', help='The directory to save the output library in.', nargs="?")
-	
-	args = parser.parse_args()
-
-	if not test_docker():
-		parser.error("""Docker installation not found. Please install Docker and try again.
-See https://docs.docker.com/get-docker/ for more information.""")
-
-	if args.input_file:
-		# input_file = "/home/domdf/Downloads/lib2nist/MoNA.msp"
-		input_file = pathlib.Path(args.input_file).absolute()
-		
-		if not input_file.is_file():
-			parser.error(f"Input file not found at the given path: {input_file}")
-		
-		lib_name = input_file.stem
-		
-		if args.output_dir:
-			# output_dir = "/home/domdf/Downloads/lib2nist/"
-			output_dir = pathlib.Path(args.output_dir).absolute()
-			
-		else:
-			output_dir = pathlib.Path.cwd().absolute()
-		
-		if not output_dir.is_dir():
-			output_dir.mkdir(parents=True)
-		
-		output_lib_dir = output_dir / lib_name
-	
-		if output_lib_dir.exists():
-			print(f"\nA library already exists in the output location with the name '{lib_name}'.")
-			if not input("Do you want to remove the existing library? [y/N] ").startswith("y"):
-				sys.exit(0)
-			else:
-				shutil.rmtree(output_lib_dir)
-
-		msp2lib(input_file, output_dir, lib_name)
-		
-	else:
-		parser.error("Please specify an input file.")
+def version():
+	print(__version__)
+	return 0
 
 
 def msp2lib(msp_file, output_dir, lib_name):
@@ -140,6 +98,66 @@ def run_docker(input_dir, output_dir):
 			f"-v '{output_dir}:/output' "
 			f"--env USER_UID={os.getuid()} domdfcoding/lib2nist-wine "
 			"/make_nistlib.sh")
+
+
+def main():
+	import argparse
+	
+	parser = argparse.ArgumentParser(description=__doc__)
+	parser.add_argument('input_file', help='The MSP file to convert.', nargs="?")
+	parser.add_argument('output_dir', help='The directory to save the output library in.', nargs="?")
+	
+	parser.add_argument(
+			'--version', dest="version", action="store_true", default=False,
+			help='Show the version number and exit.')
+	
+	args = parser.parse_args()
+	
+	if args.version:
+		sys.exit(version())
+	
+	if not test_docker():
+		parser.error("""Docker installation not found. Please install Docker and try again.
+See https://docs.docker.com/get-docker/ for more information.""")
+	
+	if args.input_file:
+		
+		print(f"""msp2lib Version {__version__} Copyright (C) {__copyright__}
+This program comes with ABSOLUTELY NO WARRANTY, to the extent permitted by law.
+This is free software: you are free to change and redistribute it under certain conditions.
+See https://www.gnu.org/licenses/lgpl-3.0.en.html for more information.""")
+		
+		# input_file = "/home/domdf/Downloads/lib2nist/MoNA.msp"
+		input_file = pathlib.Path(args.input_file).absolute()
+		
+		if not input_file.is_file():
+			parser.error(f"Input file not found at the given path: {input_file}")
+		
+		lib_name = input_file.stem
+		
+		if args.output_dir:
+			# output_dir = "/home/domdf/Downloads/lib2nist/"
+			output_dir = pathlib.Path(args.output_dir).absolute()
+		
+		else:
+			output_dir = pathlib.Path.cwd().absolute()
+		
+		if not output_dir.is_dir():
+			output_dir.mkdir(parents=True)
+		
+		output_lib_dir = output_dir / lib_name
+		
+		if output_lib_dir.exists():
+			print(f"\nA library already exists in the output location with the name '{lib_name}'.")
+			if not input("Do you want to remove the existing library? [y/N] ").startswith("y"):
+				sys.exit(0)
+			else:
+				shutil.rmtree(output_lib_dir)
+		
+		msp2lib(input_file, output_dir, lib_name)
+	
+	else:
+		parser.error("Please specify an input file.")
 
 
 if __name__ == '__main__':

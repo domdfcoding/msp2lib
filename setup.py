@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 """Setup script"""
 
-# import os
-# import pathlib
-# import sys
-# import warnings
+import os
+import pathlib
+import sys
+import warnings
 
 from setuptools import setup
 
@@ -13,11 +13,11 @@ from __pkginfo__ import (
 	short_desc, VERSION, web,
 	)
 
-# if not pathlib.Path("msp2lib.1").is_file():
-# 	warnings.warn("manpage not found. Trying to build now.")
-# 	exit_code = os.system("./make_manpage.sh")
-# 	if exit_code:
-# 		sys.exit(exit_code)
+if not pathlib.Path("msp2lib.1").is_file():
+	warnings.warn("manpage not found. Trying to build now.")
+	exit_code = os.system("./make_manpage.sh")
+	if exit_code:
+		sys.exit(exit_code)
 
 setup(
 		author=author,

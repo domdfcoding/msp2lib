@@ -12,8 +12,8 @@ from sphinx_shared import *
 version = f"{modname} {__version__}"
 copyright = (
 		f"{__copyright__}. License LGPLv3+: GNU LGPL version 3 or later "
-		f"<http://gnu.org/licenses/lgpl.html>\n"
-		"This is free software: you are free to change and redistribute it.  "
+		f"<http://gnu.org/licenses/lgpl.html>\n\n"
+		"This is free software: you are free to change and redistribute it under certain conditions.\n\n"
 		"There is NO WARRANTY, to the extent permitted by law."
 		)
 

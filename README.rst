@@ -34,6 +34,17 @@ msp2lib
     :target: https://github.com/domdfcoding/msp2lib/blob/master/LICENSE
 
 
-This is a docker container to allow PyMassSpec NIST Search to function on Linux via a Flask REST API. It is based on the [pywine](https://hub.docker.com/r/tobix/pywine) docker image by [webcomics](https://github.com/webcomics).
+This is a Python script to facilitate conversion from MSP files to NIST MS Search user libraries.
 
-This container isn't designed to be run directly; rather it is invoked automatically from [PyMassSpec NIST Search](https://github.com/domdfcoding/pynist) when running on platforms other than Windows. 
+Usage
+=========
+
+.. code-block::
+
+    msp2lib.py [input_file] [output_dir]
+
+where ``input_file`` is the MSP file to be converted and ``output_dir`` is the directory to
+save the output library in. If ``output_dir`` is unspecified the current working directory
+is used instead.
+
+

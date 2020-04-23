@@ -35,7 +35,7 @@ sys.path.append(os.path.abspath('..'))
 from sphinx.locale import _
 
 # Might as well consolidate imports here
-from rsc_on_this_day import __author__, __version__, __copyright__
+from msp2lib import __author__, __version__, __copyright__
 from __pkginfo__ import github_username, modname, github_url
 
 __all__ = [
