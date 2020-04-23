@@ -1,0 +1,21 @@
+language: python
+dist: xenial
+python:
+- '3.6'
+- '3.7'
+- '3.8'
+#before_script:
+#  - pip install coveralls -r tests/requirements.txt
+script:
+#- pytest --cov=msp2lib tests/
+  - echo "Skipping Tests"
+#after_success:
+#  - coveralls
+deploy:
+  provider: pypi
+  user: DomDF
+  on:
+    tags: true
+    python: '3.6'
+  distributions: sdist bdist_wheel
+  skip_existing: true

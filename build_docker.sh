@@ -1,0 +1,1 @@
+docker build --no-cache -t domdfcoding/lib2nist-wine .
