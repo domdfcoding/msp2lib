@@ -29,11 +29,13 @@ Docker must be installed to use this program.
 
 # stdlib
 import distutils.spawn
+import subprocess
 import os
 import pathlib
 import shutil
 import sys
 import tempfile
+import re
 
 
 # The first time this script is run it will download the latest
@@ -111,6 +113,14 @@ def main():
 			'--version', dest="version", action="store_true", default=False,
 			help='Show the version number and exit.')
 	
+	parser.add_argument(
+			'--get-docker-image', dest="get_image", action="store_true", default=False,
+			help='Download the docker image now rather than at first run, then exit.')
+	
+	parser.add_argument(
+			'--build-docker-image', dest="build_image", action="store_true", default=False,
+			help='Build the docker image from the Dockerfile, then exit.')
+	
 	args = parser.parse_args()
 	
 	if args.version:
@@ -120,7 +130,20 @@ def main():
 		parser.error("""Docker installation not found. Please install Docker and try again.
 See https://docs.docker.com/get-docker/ for more information.""")
 	
-	if args.input_file:
+	if args.get_image:
+		process = subprocess.Popen("docker pull domdfcoding/lib2nist-wine", stdout=subprocess.PIPE, shell=True)
+		for line in iter(process.stdout.readline, b""):
+			print(re.sub(r"\n$", '', line.decode("UTF-8")))
+		sys.exit(process.returncode)
+	
+	elif args.build_image:
+		pkg_dir = pathlib.Path(__file__).parent.absolute()
+		process = subprocess.Popen("docker build --no-cache -t domdfcoding/lib2nist-wine /home/domdf/Python/01\ GitHub\ Repos/lib2nist-wine/msp2lib/.", stdout=subprocess.PIPE, shell=True)
+		for line in iter(process.stdout.readline, b""):
+			print(re.sub(r"\n$", '', line.decode("UTF-8")))
+		sys.exit(process.returncode)
+	
+	elif args.input_file:
 		
 		print(f"""msp2lib Version {__version__} Copyright (C) {__copyright__}
 This program comes with ABSOLUTELY NO WARRANTY, to the extent permitted by law.
@@ -158,7 +181,3 @@ See https://www.gnu.org/licenses/lgpl-3.0.en.html for more information.""")
 	
 	else:
 		parser.error("Please specify an input file.")
-
-
-if __name__ == '__main__':
-	main()

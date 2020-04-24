@@ -10,7 +10,6 @@ LABEL \
   org.label-schema.name="The NIST Library Conversion program running in Wine and Docker" \
   org.label-schema.vcs-url="https://github.com/domdfcoding/lib2nist-wine"
 
-COPY requirements.txt /requirements.txt
 COPY make_nistlib.sh /make_nistlib.sh
 RUN chmod +x /make_nistlib.sh
 

@@ -35,6 +35,16 @@ Convert an MSP file representing one or more Mass Spectra to a NIST MS Search us
 	**--version**
 		Show the version number and exit.
 
+	**--get-docker-image**
+		Download the docker image now rather than at first run, then exit.
+		This can also be used to update the docker image.
+
+	**--build-docker-image**
+		Build the docker image from the Dockerfile, then exit.
+		This can be useful when installing offline.
+
+
+
 
 Examples
 ---------

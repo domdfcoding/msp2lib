@@ -21,10 +21,10 @@ copyright = """
 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 """
 
-VERSION = "0.2.3"
+VERSION = "0.0.0"
 
 modname = "msp2lib"
-py_modules = [modname]
+py_modules = None
 entry_points = {
 		'console_scripts': [
 				f'msp2lib=msp2lib:main',

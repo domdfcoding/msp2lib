@@ -1,1 +1,1 @@
-docker build --no-cache -t domdfcoding/lib2nist-wine .
+docker build --no-cache -t domdfcoding/lib2nist-wine /home/domdf/Python/01\ GitHub\ Repos/lib2nist-wine/msp2lib/.

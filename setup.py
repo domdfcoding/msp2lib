@@ -6,7 +6,7 @@ import pathlib
 import sys
 import warnings
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 from __pkginfo__ import (
 	author, author_email, classifiers, entry_points, install_requires, license, long_description, modname, py_modules,
@@ -29,10 +29,15 @@ setup(
 		license=license,
 		long_description=long_description,
 		name=modname,
-		packages=None,
+		packages=find_packages(exclude=("tests",)),
 		py_modules=py_modules,
 		url=web,
 		version=VERSION,
+		package_data={modname: [
+				str(pathlib.Path(".") / modname / "Dockerfile"),
+				str(pathlib.Path(".") / modname / "make_nistlib.sh"),
+				]},
+		include_package_data=True,
 		)
 
 # TODO: include manpage in wheel and put in right place on filesystem
