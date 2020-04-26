@@ -2,4 +2,4 @@ include __pkginfo__.py
 include requirements.txt
 include LICENSE
 include msp2lib.1
-recursive-include msp2lib/*
+recursive-include msp2lib *
