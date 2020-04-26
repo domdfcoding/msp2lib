@@ -1,20 +1,23 @@
 **************************
-:mod:`msp2lib`
+API Reference
 **************************
 
 .. contents:: Table of Contents
 
-.. automodule:: msp2lib
-    :members:
-    :private-members:
-    :special-members:
-
 ===================================
-:mod:`msp2lib`
+:mod:`msp2lib.core`
 ===================================
 
 
-.. automodule:: msp2lib
+.. automodule:: msp2lib.core
     :members:
-    :private-members:
-    :special-members:
+    :undoc-members:
+
+===================================
+:mod:`msp2lib.utils`
+===================================
+
+
+.. automodule:: msp2lib.core
+    :members:
+    :undoc-members:

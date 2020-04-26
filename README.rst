@@ -50,4 +50,10 @@ where ``input_file`` is the MSP file to be converted and ``output_dir`` is the d
 save the output library in. If ``output_dir`` is unspecified the current working directory
 is used instead.
 
+Docker must be installed to use this program.
 
+The first time this script is run it will download the latest
+version of the docker image automatically. This can also be done manually,
+such as to upgrade to the latest version, by running with the ``--get-docker-image`` flag.
+
+For more usage information see the manpage or run with the ``--help`` flag.

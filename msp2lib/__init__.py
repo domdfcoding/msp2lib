@@ -34,4 +34,8 @@ __version__ = "0.0.0"
 __email__ = "dominic@davis-foster.co.uk"
 
 
-from .core import msp2lib, prep_workdirs, run_docker, test_docker, version, main
+from .core import msp2lib, test_docker, main
+from .utils import (
+	test_docker, version, about, download_docker_image,
+	build_docker_image, subprocess_with_log,
+	)

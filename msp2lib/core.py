@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-#  wrapper_script.py
+#  core.py
 """
 Convert an MSP file representing one or more Mass Spectra to a NIST MS Search user library.
 
 Docker must be installed to use this program.
+
+The first time this script is run it will download the latest
+version of the docker image automatically.
+
+This can also be done manually, such as to upgrade to the latest version,
+by running with the ``--get-docker-image`` flag.
 """
 #
 #  Copyright (c) 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
@@ -28,72 +34,77 @@ Docker must be installed to use this program.
 
 
 # stdlib
-import distutils.spawn
-import subprocess
 import os
 import pathlib
 import shutil
 import sys
 import tempfile
-import re
+
+# this package
+from .utils import (
+	_ask_existing_lib, _prep_workdirs, about, build_docker_image,
+	download_docker_image, test_docker, version,
+	)
 
 
-# The first time this script is run it will download the latest
-# version of the docker image automatically.
-
-# This can also be done manually, such as to upgrade to the latest version,
-# with the following bash command:
-#
-#	$ docker pull domdfcoding/pywine-pyms-nist
-#
-
-__author__ = "Dominic Davis-Foster"
-__copyright__ = "2020 Dominic Davis-Foster"
-
-__license__ = "LGPLv3"
-__version__ = "0.0.0"
-__email__ = "dominic@davis-foster.co.uk"
-
-# TODo: manpage
 # TODO: windows version
+# TODO: ability to run multiple jobs in the same container, rather than starting and stopping them
 
 
-def test_docker():
-	return bool(distutils.spawn.find_executable("docker"))
-
-
-def version():
-	print(__version__)
-	return 0
-
-
-def msp2lib(msp_file, output_dir, lib_name):
+def msp2lib(msp_file, output_dir, lib_name=None):
+	"""
+	Convert the provided MSP file to a NIST User Library, and store the newly
+	created library in the given output directory.
+	
+	:param msp_file: The MSP file to convert to a NIST User Library
+	:type msp_file: str or pathlib.Path
+	:param output_dir: The directory to store the NIST User Library in
+	:type output_dir: str or pathlib.Path
+	:param lib_name: The name of the NIST User Library. If ``None`` this will
+		be the filename of the MSP file without the extension.
+	:type lib_name: str, optional
+	"""
+	
+	msp_file = pathlib.Path(msp_file)
+	
+	if lib_name is None:
+		lib_name = msp_file.stem
+	
 	with tempfile.TemporaryDirectory() as workdir:
-		input_workdir, output_workdir = prep_workdirs(workdir)
+		input_workdir, output_workdir = _prep_workdirs(workdir)
 		
 		# Copy input file into input
 		shutil.copy(msp_file, input_workdir / "input.msp")
 		
-		print("Launching Docker...")
+		# print("Launching Docker...")
 		
-		run_docker(input_workdir, output_workdir)
+		_run_docker(input_workdir, output_workdir)
 		
 		shutil.copytree(output_workdir / "input", output_dir / lib_name)
 
 
-def prep_workdirs(workdir):
-	workdir = pathlib.Path(workdir)
+def _run_docker(input_dir, output_dir):
+	"""
+	Launch the docker container.
 	
-	input_workdir = workdir / "input"
-	input_workdir.mkdir(parents=True)
+	:param input_dir: The path to the directory containing the input MSP file.
+		The input MSP file MUST be named `input.msp`
+	:type input_dir: str or pathlib.Path
+	:param output_dir: The path to the directory where docker will save the created library.
+		The new library will be named `input`, but can be renamed after creation.
+	:type output_dir: str or pathlib.Path
 	
-	output_workdir = workdir / "output"
-	output_workdir.mkdir(parents=True)
-	
-	return input_workdir, output_workdir
+	On Unix, the return value is the exit status of the process encoded in the
+	format specified for :fun:`python:os.wait()`. Note that POSIX does not specify
+	the meaning of the return value of the C system() function, so the return value
+	is system-dependent.
 
-
-def run_docker(input_dir, output_dir):
+	On Windows, the return value is that returned by the system shell after running command.
+	The shell is given by the Windows environment variable COMSPEC: it is usually cmd.exe,
+	which returns the exit status of the command run; on systems using a non-native shell,
+	consult your shell documentation.
+	"""
+	
 	return os.system(
 			"docker run --name=lib2nist-wine --rm "
 			f"-v '{input_dir}:/input' "
@@ -103,6 +114,10 @@ def run_docker(input_dir, output_dir):
 
 
 def main():
+	"""
+	Entry point for running from the command line.
+	"""
+	
 	import argparse
 	
 	parser = argparse.ArgumentParser(description=__doc__)
@@ -131,37 +146,23 @@ def main():
 See https://docs.docker.com/get-docker/ for more information.""")
 	
 	if args.get_image:
-		process = subprocess.Popen("docker pull domdfcoding/lib2nist-wine", stdout=subprocess.PIPE, shell=True)
-		for line in iter(process.stdout.readline, b""):
-			print(re.sub(r"\n$", '', line.decode("UTF-8")))
-		sys.exit(process.returncode)
+		sys.exit(download_docker_image())
 	
 	elif args.build_image:
-		pkg_dir = pathlib.Path(__file__).parent.absolute()
-		process = subprocess.Popen("docker build --no-cache -t domdfcoding/lib2nist-wine /home/domdf/Python/01\ GitHub\ Repos/lib2nist-wine/msp2lib/.", stdout=subprocess.PIPE, shell=True)
-		for line in iter(process.stdout.readline, b""):
-			print(re.sub(r"\n$", '', line.decode("UTF-8")))
-		sys.exit(process.returncode)
+		sys.exit(build_docker_image())
 	
 	elif args.input_file:
 		
-		print(f"""msp2lib Version {__version__} Copyright (C) {__copyright__}
-This program comes with ABSOLUTELY NO WARRANTY, to the extent permitted by law.
-This is free software: you are free to change and redistribute it under certain conditions.
-See https://www.gnu.org/licenses/lgpl-3.0.en.html for more information.""")
+		about()
 		
-		# input_file = "/home/domdf/Downloads/lib2nist/MoNA.msp"
 		input_file = pathlib.Path(args.input_file).absolute()
+		lib_name = input_file.stem
 		
 		if not input_file.is_file():
 			parser.error(f"Input file not found at the given path: {input_file}")
 		
-		lib_name = input_file.stem
-		
 		if args.output_dir:
-			# output_dir = "/home/domdf/Downloads/lib2nist/"
 			output_dir = pathlib.Path(args.output_dir).absolute()
-		
 		else:
 			output_dir = pathlib.Path.cwd().absolute()
 		
@@ -171,11 +172,10 @@ See https://www.gnu.org/licenses/lgpl-3.0.en.html for more information.""")
 		output_lib_dir = output_dir / lib_name
 		
 		if output_lib_dir.exists():
-			print(f"\nA library already exists in the output location with the name '{lib_name}'.")
-			if not input("Do you want to remove the existing library? [y/N] ").startswith("y"):
-				sys.exit(0)
-			else:
+			if _ask_existing_lib(lib_name):
 				shutil.rmtree(output_lib_dir)
+			else:
+				sys.exit(0)
 		
 		msp2lib(input_file, output_dir, lib_name)
 	

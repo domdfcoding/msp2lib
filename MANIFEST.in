@@ -2,5 +2,4 @@ include __pkginfo__.py
 include requirements.txt
 include LICENSE
 include msp2lib.1
-include msp2lib/Dockerfile
-include msp2lib/make_nistlib.sh
+recursive-include msp2lib/*

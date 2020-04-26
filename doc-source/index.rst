@@ -6,10 +6,15 @@
 |browse_github|
 
 .. toctree::
-    :maxdepth: 3
-    :caption: Documentation
+	:hidden:
 
-    docs
-    Source
-    Building
-    Manpage<manpage>
+	self
+
+.. toctree::
+	:maxdepth: 3
+	:caption: Documentation
+
+	docs
+	Source
+	Building
+	Manpage<manpage>
