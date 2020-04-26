@@ -139,7 +139,8 @@ def main():
 	args = parser.parse_args()
 	
 	if args.version:
-		sys.exit(version())
+		version()
+		sys.exit(0)
 	
 	if not test_docker():
 		parser.error("""Docker installation not found. Please install Docker and try again.

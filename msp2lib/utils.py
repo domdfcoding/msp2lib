@@ -49,26 +49,20 @@ def test_docker():
 def version():
 	"""
 	Prints the version number of msp2lib
-
-	:rtype: int
 	"""
 
 	print(__version__)
-	return 0
 
 
 def about():
 	"""
 	Prints information about msp2lib
-
-	:rtype: int
 	"""
 
 	print(f"""msp2lib Version {__version__} Copyright (C) {__copyright__}
 This program comes with ABSOLUTELY NO WARRANTY, to the extent permitted by law.
 This is free software: you are free to change and redistribute it under certain conditions.
 See https://www.gnu.org/licenses/lgpl-3.0.en.html for more information.""")
-	return 0
 
 
 def _prep_workdirs(workdir):
