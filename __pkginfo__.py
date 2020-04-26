@@ -21,7 +21,7 @@ copyright = """
 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 """
 
-VERSION = "0.1.2"
+VERSION = "0.1.3"
 
 modname = "msp2lib"
 py_modules = None
