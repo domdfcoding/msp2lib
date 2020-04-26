@@ -5,7 +5,7 @@ python:
 - '3.7'
 - '3.8'
 install:
-  - pip3 install manpage-builder/requirements.txt
+  - pip install manpage-builder/requirements.txt
 script:
 - echo "Skipping Tests"
 deploy:
