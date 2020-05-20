@@ -1,1 +1,3 @@
-docker build --no-cache -t domdfcoding/lib2nist-wine /home/domdf/Python/01\ GitHub\ Repos/lib2nist-wine/msp2lib/.
+#!/bin/bash
+
+docker build --no-cache -t domdfcoding/lib2nist-wine /media/VIDEO/Syncthing/Python/01\ GitHub\ Repos/msp2lib/msp2lib/.
