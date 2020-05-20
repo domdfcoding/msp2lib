@@ -10,11 +10,12 @@ python:
 install:
 
   - pip install pip  --upgrade
+  - pip install tox tox-travis
 
   - pip install -r manpage-builder/requirements.txt
 
 script:
-  - echo "skipping tests"
+  - tox
 
 
 stages:

@@ -11,7 +11,7 @@ enable_tests: False
 enable_conda: False
 
 exclude_files:
-  - conf
+#  - conf
   - setup
 
 additional_ignore:
