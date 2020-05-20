@@ -16,6 +16,7 @@ exclude_files:
 
 additional_ignore:
   - cache.db
+  - msp2lib.1
 
 console_scripts:
   - "msp2lib=msp2lib:main"
