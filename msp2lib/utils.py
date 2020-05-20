@@ -144,4 +144,3 @@ def subprocess_with_log(command):
 		print(re.sub(r"\n$", '', line.decode("UTF-8")))
 	
 	return process
-

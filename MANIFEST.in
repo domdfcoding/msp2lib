@@ -1,5 +1,6 @@
 include __pkginfo__.py
-include requirements.txt
 include LICENSE
+include requirements.txt
+recursive-exclude **/__pycache__ *
 include msp2lib.1
 recursive-include msp2lib *
