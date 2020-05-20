@@ -6,11 +6,11 @@ import pathlib
 import sys
 import warnings
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 from __pkginfo__ import (
-	author, author_email, classifiers, entry_points, install_requires, license, long_description, modname, py_modules,
-	short_desc, VERSION, web,
+	__license__, __version__, author, author_email, classifiers, entry_points, install_requires, long_description,
+	modname, py_modules, short_desc, web,
 	)
 
 if not pathlib.Path("msp2lib.1").is_file():
@@ -26,13 +26,13 @@ setup(
 		description=short_desc,
 		entry_points=entry_points,
 		install_requires=install_requires,
-		license=license,
+		license=__license__,
 		long_description=long_description,
 		name=modname,
 		packages=find_packages(exclude=("tests",)),
 		py_modules=py_modules,
 		url=web,
-		version=VERSION,
+		version=__version__,
 		package_data={modname: [
 				str(pathlib.Path(".") / modname / "Dockerfile"),
 				str(pathlib.Path(".") / modname / "make_nistlib.sh"),

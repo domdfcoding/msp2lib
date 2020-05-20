@@ -75,6 +75,7 @@ extensions = [
 		]
 
 templates_path = ['_templates']
+html_static_path = ['_static']
 source_suffix = '.rst'
 exclude_patterns = []
 
@@ -84,6 +85,15 @@ pygments_style = 'default'
 intersphinx_mapping = {  # Is this where those mystery links are specified?
 		'rtd': ('https://docs.readthedocs.io/en/latest/', None),
 		'sphinx': ('http://www.sphinx-doc.org/en/stable/', None),
+		'python': ('https://docs.python.org/3/', None),
+		"NumPy": ('https://numpy.org/doc/stable/', None),
+		"SciPy": ('https://docs.scipy.org/doc/scipy/reference', None),
+		"matplotlib": ('https://matplotlib.org', None),
+		"h5py": ('https://docs.h5py.org/en/latest/', None),
+		"Sphinx": ('https://www.sphinx-doc.org/en/stable/', None),
+		"Django": ('https://docs.djangoproject.com/en/dev/', 'https://docs.djangoproject.com/en/dev/_objects/'),
+		"sarge": ('https://sarge.readthedocs.io/en/latest/', None),
+		"attrs": ('https://www.attrs.org/en/stable/', None),
 		}
 
 html_theme = 'sphinx_rtd_theme'
@@ -106,11 +116,11 @@ html_context = {
 htmlhelp_basename = slug
 
 latex_documents = [
-		('index', '{0}.tex'.format(slug), modname, author, 'manual'),
+		('index', '{0}.tex'.format(slug), project, author, 'manual'),
 		]
 
 texinfo_documents = [
-		('index', slug, modname, author, slug, modname, 'Miscellaneous'),
+		('index', slug, project, author, slug, project, 'Miscellaneous'),
 		]
 
 
@@ -118,7 +128,7 @@ texinfo_documents = [
 def setup(app):
 	from sphinx.domains.python import PyField
 	from sphinx.util.docfields import Field
-	
+
 	app.add_object_type(
 			'confval',
 			'confval',
