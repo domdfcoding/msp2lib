@@ -1,4 +1,4 @@
-FROM tobix/pywine
+FROM tobix/wine-staging
 LABEL MAINTAINER="Dominic Davis-Foster dominic@davis-foster.co.uk"
 
 ARG BUILD_DATE
@@ -15,7 +15,7 @@ RUN chmod +x /make_nistlib.sh
 
 # Download and unzip Lib2Nist
 RUN apt-get update && \
-	apt-get install wget -y &&\
+	apt-get install wget -y --no-install-recommends &&\
 	wget https://chemdata.nist.gov/mass-spc/ms-search/downloads/LIB2NIST.zip &&\
 	apt-get remove wget -y &&\
 	apt-get clean &&\
