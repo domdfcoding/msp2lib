@@ -24,7 +24,6 @@ utilities for msp2lib
 #  MA 02110-1301, USA.
 #
 
-
 # stdlib
 import distutils.spawn
 import pathlib
@@ -59,10 +58,12 @@ def about():
 	Prints information about msp2lib
 	"""
 
-	print(f"""msp2lib Version {__version__} Copyright (C) {__copyright__}
+	print(
+			f"""msp2lib Version {__version__} Copyright (C) {__copyright__}
 This program comes with ABSOLUTELY NO WARRANTY, to the extent permitted by law.
 This is free software: you are free to change and redistribute it under certain conditions.
-See https://www.gnu.org/licenses/lgpl-3.0.en.html for more information.""")
+See https://www.gnu.org/licenses/lgpl-3.0.en.html for more information."""
+			)
 
 
 def _prep_workdirs(workdir):
