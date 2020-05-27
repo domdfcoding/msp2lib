@@ -41,8 +41,13 @@ import tempfile
 
 # this package
 from .utils import (
-	_ask_existing_lib, _prep_workdirs, about, build_docker_image,
-	download_docker_image, test_docker, version,
+	_ask_existing_lib,
+	_prep_workdirs,
+	about,
+	build_docker_image,
+	download_docker_image,
+	test_docker,
+	version,
 	)
 
 
@@ -125,16 +130,16 @@ def main():
 	parser.add_argument('output_dir', help='The directory to save the output library in.', nargs="?")
 
 	parser.add_argument(
-			'--version', dest="version", action="store_true", default=False,
-			help='Show the version number and exit.')  # yapf: disable
+		'--version', dest="version", action="store_true", default=False,
+		help='Show the version number and exit.')  # yapf: disable
 
 	parser.add_argument(
-			'--get-docker-image', dest="get_image", action="store_true", default=False,
-			help='Download the docker image now rather than at first run, then exit.')  # yapf: disable
+		'--get-docker-image', dest="get_image", action="store_true", default=False,
+		help='Download the docker image now rather than at first run, then exit.')  # yapf: disable
 
 	parser.add_argument(
-			'--build-docker-image', dest="build_image", action="store_true", default=False,
-			help='Build the docker image from the Dockerfile, then exit.')  # yapf: disable
+		'--build-docker-image', dest="build_image", action="store_true", default=False,
+		help='Build the docker image from the Dockerfile, then exit.')  # yapf: disable
 
 	args = parser.parse_args()
 
