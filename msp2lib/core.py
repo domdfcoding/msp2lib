@@ -42,14 +42,8 @@ from typing import Optional, Union
 
 # this package
 from .utils import (
-	_ask_existing_lib,
-	_prep_workdirs,
-	about,
-	build_docker_image,
-	download_docker_image,
-	test_docker,
-	version
-)
+		_ask_existing_lib, _prep_workdirs, about, build_docker_image, download_docker_image, test_docker, version
+		)
 
 # TODO: windows version
 # TODO: ability to run multiple jobs in the same container, rather than starting and stopping them
