@@ -4,3 +4,5 @@ include requirements.txt
 recursive-exclude **/__pycache__ *
 include msp2lib.1
 recursive-include msp2lib *
+recursive-include msp2lib/ *.pyi
+recursive-include msp2lib/ py.typed

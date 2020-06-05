@@ -11,6 +11,7 @@
 # This script based on https://github.com/rocky/python-uncompyle6/blob/master/__pkginfo__.py
 #
 
+# stdlib
 import pathlib
 
 __all__ = [
@@ -60,7 +61,7 @@ author_email = "dominic@davis-foster.co.uk"
 github_username = "domdfcoding"
 web = github_url = f"https://github.com/domdfcoding/msp2lib"
 project_urls = {
-		"Documentation": f"https://msp2lib.readthedocs.io",  # TODO: Make this link match the package version
+		"Documentation": f"https://msp2lib.readthedocs.io",
 		"Issue Tracker": f"{github_url}/issues",
 		"Source Code": github_url,
 		}
