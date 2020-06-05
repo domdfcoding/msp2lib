@@ -38,37 +38,41 @@ import pathlib
 import shutil
 import sys
 import tempfile
+from typing import Optional, Union
 
 # this package
 from .utils import (
-		_ask_existing_lib,
-		_prep_workdirs,
-		about,
-		build_docker_image,
-		download_docker_image,
-		test_docker,
-		version,
-		)
+	_ask_existing_lib,
+	_prep_workdirs,
+	about,
+	build_docker_image,
+	download_docker_image,
+	test_docker,
+	version
+)
 
 # TODO: windows version
 # TODO: ability to run multiple jobs in the same container, rather than starting and stopping them
 
 
-def msp2lib(msp_file, output_dir, lib_name=None):
+def msp2lib(
+		msp_file: Union[str, pathlib.Path, os.PathLike],
+		output_dir: Union[str, pathlib.Path, os.PathLike],
+		lib_name: Optional[str] = None,
+		):
 	"""
 	Convert the provided MSP file to a NIST User Library, and store the newly
 	created library in the given output directory.
 
 	:param msp_file: The MSP file to convert to a NIST User Library
-	:type msp_file: str or pathlib.Path
 	:param output_dir: The directory to store the NIST User Library in
-	:type output_dir: str or pathlib.Path
 	:param lib_name: The name of the NIST User Library. If ``None`` this will
 		be the filename of the MSP file without the extension.
 	:type lib_name: str, optional
 	"""
 
 	msp_file = pathlib.Path(msp_file)
+	output_dir = pathlib.Path(output_dir)
 
 	if lib_name is None:
 		lib_name = msp_file.stem
@@ -83,10 +87,14 @@ def msp2lib(msp_file, output_dir, lib_name=None):
 
 		_run_docker(input_workdir, output_workdir)
 
-		shutil.copytree(output_workdir / "input", output_dir / lib_name)
+		output_library: pathlib.Path = output_dir / lib_name
+		shutil.copytree(output_workdir / "input", output_library)
 
 
-def _run_docker(input_dir, output_dir):
+def _run_docker(
+		input_dir: Union[str, pathlib.Path, os.PathLike],
+		output_dir: Union[str, pathlib.Path, os.PathLike],
+		):
 	"""
 	Launch the docker container.
 

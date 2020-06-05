@@ -26,9 +26,11 @@ utilities for msp2lib
 
 # stdlib
 import distutils.spawn
+import os
 import pathlib
 import re
 import subprocess
+from typing import Sequence, Tuple, Union
 
 # this package
 from msp2lib import __copyright__, __version__
@@ -45,37 +47,38 @@ def test_docker():
 	return bool(distutils.spawn.find_executable("docker"))
 
 
-def version():
+def version() -> str:
 	"""
 	Prints the version number of msp2lib
 	"""
 
 	print(__version__)
+	return __version__
 
 
-def about():
+def about() -> str:
 	"""
 	Prints information about msp2lib
 	"""
 
-	print(
-			f"""msp2lib Version {__version__} Copyright (C) {__copyright__}
+	about_text = f"""msp2lib Version {__version__} Copyright (C) {__copyright__}
 This program comes with ABSOLUTELY NO WARRANTY, to the extent permitted by law.
 This is free software: you are free to change and redistribute it under certain conditions.
 See https://www.gnu.org/licenses/lgpl-3.0.en.html for more information."""
-			)
+
+	print(about_text)
+	return about_text
 
 
-def _prep_workdirs(workdir):
+def _prep_workdirs(workdir: Union[str, pathlib.Path, os.PathLike]) -> Tuple[pathlib.Path, pathlib.Path]:
 	"""
 	Prepare input and output directories in the given directory.
 	These will be then mounted in the docker container.
 
 	:param workdir:
-	:type workdir: str or pathlib.Path
 	:return: The newly created directories
-	:rtype: pathlib.Path, pathlib.Path
 	"""
+
 	workdir = pathlib.Path(workdir)
 
 	input_workdir = workdir / "input"
@@ -87,7 +90,7 @@ def _prep_workdirs(workdir):
 	return input_workdir, output_workdir
 
 
-def _ask_existing_lib(lib_name):
+def _ask_existing_lib(lib_name: str) -> bool:
 	"""
 	Asks the user whether they wish to remove an existing library that exists with the same name.
 
@@ -103,7 +106,7 @@ def _ask_existing_lib(lib_name):
 	return input("Do you want to remove the existing library? [y/N] ").lower().startswith("y")
 
 
-def download_docker_image():
+def download_docker_image() -> int:
 	"""
 	Pull the lib2nist-wine docker image from dockerhub.
 
@@ -115,7 +118,7 @@ def download_docker_image():
 	return int(process.returncode)
 
 
-def build_docker_image():
+def build_docker_image() -> int:
 	"""
 	Build the lib2nist-wine docker image from the Dockerfile.
 
@@ -128,7 +131,10 @@ def build_docker_image():
 	return int(process.returncode)
 
 
-def subprocess_with_log(command):
+_newline_re = re.compile(r"\n$")
+
+
+def subprocess_with_log(command: Union[str, Sequence[str]]) -> subprocess.Popen:
 	"""
 	The ``command`` with :class:`python:subprocess.Popen`, printing any stdout from the command.
 
@@ -136,12 +142,13 @@ def subprocess_with_log(command):
 	:type command: str or list of str
 
 	:return:
-	:rtype: :class:`python:subprocess.Popen`
+	:rtype: subprocess.Popen
 	"""
 
 	process = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
 
-	for line in iter(process.stdout.readline, b""):
-		print(re.sub(r"\n$", '', line.decode("UTF-8")))
+	if process is not None:
+		for line in iter(process.stdout.readline, b""):  # type: ignore
+			print(_newline_re.sub('', line.decode("UTF-8")))
 
 	return process

@@ -33,5 +33,6 @@ __license__ = "LGPLv3"
 __version__ = "0.1.3"
 __email__ = "dominic@davis-foster.co.uk"
 
+# this package
 from .core import main, msp2lib
 from .utils import about, build_docker_image, download_docker_image, subprocess_with_log, test_docker, version
