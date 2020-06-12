@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 #
 #  core.py
 """
@@ -124,6 +123,7 @@ def main():
 	Entry point for running from the command line.
 	"""
 
+	# stdlib
 	import argparse
 
 	parser = argparse.ArgumentParser(description=__doc__)

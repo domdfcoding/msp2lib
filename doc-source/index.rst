@@ -22,7 +22,7 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	* - Other
 	  - |license| |language| |commits-since| |commits-latest| |maintained| 
 
-.. |docs| image:: https://readthedocs.org/projects/msp2lib/badge/?version=latest
+.. |docs| image:: https://img.shields.io/readthedocs/msp2lib/latest?logo=read-the-docs
 	:target: https://msp2lib.readthedocs.io/en/latest/?badge=latest
 	:alt: Documentation Status
 
@@ -34,15 +34,15 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	:target: https://requires.io/github/domdfcoding/msp2lib/requirements/?branch=master
 	:alt: Requirements Status
 
-.. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/msp2lib
+.. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/msp2lib?logo=codefactor
 	:target: https://www.codefactor.io/repository/github/domdfcoding/msp2lib
 	:alt: CodeFactor Grade
 
-.. |pypi-version| image:: https://img.shields.io/pypi/v/msp2lib.svg
+.. |pypi-version| image:: https://img.shields.io/pypi/v/msp2lib
 	:target: https://pypi.org/project/msp2lib/
 	:alt: PyPI - Package Version
 
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/msp2lib.svg
+.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/msp2lib
 	:target: https://pypi.org/project/msp2lib/
 	:alt: PyPI - Supported Python Versions
 
