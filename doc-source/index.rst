@@ -92,7 +92,7 @@ Installation
 
 		.. prompt:: bash
 
-			pip install git+https://github.com//msp2lib@master
+			pip install git+https://github.com/domdfcoding/msp2lib@master
 
 .. end installation
 
