@@ -16,11 +16,14 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	* - Docs
 	  - |docs|
 	* - Tests
-	  - |travis| |requires| |codefactor|
+	  - |travis| |actions_windows| |actions_macos|
+	    |codefactor|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
+	* - Activity
+	  - |commits-latest| |commits-since| |maintained|
 	* - Other
-	  - |license| |language| |commits-since| |commits-latest| |maintained| 
+	  - |license| |language| |requires|
 
 .. |docs| image:: https://img.shields.io/readthedocs/msp2lib/latest?logo=read-the-docs
 	:target: https://msp2lib.readthedocs.io/en/latest/?badge=latest
@@ -29,6 +32,14 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 .. |travis| image:: https://img.shields.io/travis/com/domdfcoding/msp2lib/master?logo=travis
 	:target: https://travis-ci.com/domdfcoding/msp2lib
 	:alt: Travis Build Status
+
+.. |actions_windows| image:: https://github.com/domdfcoding/msp2lib/workflows/Windows%20Tests/badge.svg
+	:target: https://github.com/domdfcoding/msp2lib/actions?query=workflow%3A%22Windows+Tests%22
+	:alt: Windows Tests Status
+	
+.. |actions_macos| image:: https://github.com/domdfcoding/msp2lib/workflows/macOS%20Tests/badge.svg
+	:target: https://github.com/domdfcoding/msp2lib/actions?query=workflow%3A%22macOS+Tests%22
+	:alt: macOS Tests Status
 
 .. |requires| image:: https://requires.io/github/domdfcoding/msp2lib/requirements.svg?branch=master
 	:target: https://requires.io/github/domdfcoding/msp2lib/requirements/?branch=master
