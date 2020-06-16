@@ -94,4 +94,4 @@ classifiers = [
 
 		]
 
-keywords = ""
+keywords = "wine docker mass-spectrometry chemistry"

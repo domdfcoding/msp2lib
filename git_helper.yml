@@ -53,3 +53,9 @@ classifiers:
   - "Intended Audience :: Science/Research"
   - 'Topic :: Software Development :: Libraries :: Python Modules'
   - 'Topic :: Utilities'
+
+keywords:
+  - wine
+  - docker
+  - mass-spectrometry
+  - chemistry
