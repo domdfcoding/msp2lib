@@ -61,3 +61,6 @@ keywords:
   - docker
   - mass-spectrometry
   - chemistry
+
+docker_shields: True
+docker_name: lib2nist-wine

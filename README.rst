@@ -16,12 +16,13 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	* - Docs
 	  - |docs| |docs_check|
 	* - Tests
-	  - |travis| |actions_windows| |actions_macos|
-	    |codefactor|
+	  - |travis| |codefactor|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
 	  - |commits-latest| |commits-since| |maintained|
+	* - Docker
+	  - |docker_build| |docker_automated| |docker_size|
 	* - Other
 	  - |license| |language| |requires|
 
@@ -36,14 +37,6 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 .. |travis| image:: https://img.shields.io/travis/com/domdfcoding/msp2lib/master?logo=travis
 	:target: https://travis-ci.com/domdfcoding/msp2lib
 	:alt: Travis Build Status
-
-.. |actions_windows| image:: https://github.com/domdfcoding/msp2lib/workflows/Windows%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/msp2lib/actions?query=workflow%3A%22Windows+Tests%22
-	:alt: Windows Tests Status
-	
-.. |actions_macos| image:: https://github.com/domdfcoding/msp2lib/workflows/macOS%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/msp2lib/actions?query=workflow%3A%22macOS+Tests%22
-	:alt: macOS Tests Status
 
 .. |requires| image:: https://requires.io/github/domdfcoding/msp2lib/requirements.svg?branch=master
 	:target: https://requires.io/github/domdfcoding/msp2lib/requirements/?branch=master
@@ -87,19 +80,19 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 .. |maintained| image:: https://img.shields.io/maintenance/yes/2020
 	:alt: Maintenance
 
-.. end shields
+.. |docker_build| image:: https://img.shields.io/docker/cloud/build/domdfcoding/lib2nist-wine?label=build&logo=docker
+	:target: https://hub.docker.com/r/domdfcoding/lib2nist-wine
+	:alt: Docker Cloud Build Status
 
-+----------------------------------------------------------------------------------------------------------+
-|.. image:: https://img.shields.io/docker/cloud/build/domdfcoding/lib2nist-wine                            |
-|    :alt: Docker Cloud Build Status                                                                       |
-|    :target: https://hub.docker.com/r/domdfcoding/lib2nist-wine                                           |
-|.. image:: https://img.shields.io/docker/cloud/automated/domdfcoding/lib2nist-wine                        |
-|    :alt: Docker Cloud Automated build                                                                    |
-|    :target: https://hub.docker.com/r/domdfcoding/lib2nist-wine/builds                                    |
-|.. image:: https://img.shields.io/docker/image-size/domdfcoding/lib2nist-wine?label=docker%20image%20size |
-|    :alt: Docker Image Size (latest by date)                                                              |
-|    :target: https://hub.docker.com/r/domdfcoding/lib2nist-wine                                           |
-+----------------------------------------------------------------------------------------------------------+
+.. |docker_automated| image:: https://img.shields.io/docker/cloud/automated/domdfcoding/lib2nist-wine?label=build&logo=docker
+	:target: https://hub.docker.com/r/domdfcoding/lib2nist-wine/builds
+	:alt: Docker Cloud Automated build
+
+.. |docker_size| image:: https://img.shields.io/docker/image-size/domdfcoding/lib2nist-wine?label=image%20size&logo=docker
+	:target: https://hub.docker.com/r/domdfcoding/lib2nist-wine
+	:alt: Docker Image Size
+
+.. end shields
 
 
 Installation
