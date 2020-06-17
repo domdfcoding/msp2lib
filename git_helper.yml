@@ -18,6 +18,9 @@ additional_ignore:
   - cache.db
   - msp2lib.1
 
+platforms:
+  - Linux
+
 console_scripts:
   - "msp2lib=msp2lib:main"
 
