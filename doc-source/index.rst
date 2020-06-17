@@ -29,7 +29,7 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	:target: https://msp2lib.readthedocs.io/en/latest/?badge=latest
 	:alt: Documentation Status
 	
-.. |docs| image:: https://github.com/domdfcoding/msp2lib/workflows/Docs%20Check/badge.svg
+.. |docs_check| image:: https://github.com/domdfcoding/msp2lib/workflows/Docs%20Check/badge.svg
 	:target: https://github.com/domdfcoding/msp2lib/actions?query=workflow%3A%22Docs+Check%22
 	:alt: Docs Check Status
 
