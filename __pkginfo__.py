@@ -91,7 +91,6 @@ classifiers = [
 		'Programming Language :: Python :: 3 :: Only',
 		'License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)',
 		'Typing :: Typed',
-		'Operating System :: OS Independent',
 
 		]
 
