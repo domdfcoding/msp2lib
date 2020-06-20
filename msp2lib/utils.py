@@ -96,13 +96,13 @@ def _ask_existing_lib(lib_name: str) -> bool:
 	:param lib_name: The name of the library that already exists
 	:type lib_name: str
 
-	:return: ``True`` if the responded with ``y`` to indicate they wish to remove
+	:return: ``True`` if the user responded with ``y`` to indicate they wish to remove
 		the existing library, ``False`` otherwise.
 	:rtype: bool
 	"""
 
 	print(f"\nA library already exists in the output location with the name '{lib_name}'.")
-	return input("Do you want to remove the existing library? [y/N] ").lower().startswith("y")
+	return input("Do you want to remove the existing library? [y/N] ").lower().startswith('y')
 
 
 def download_docker_image() -> int:
@@ -138,16 +138,14 @@ def subprocess_with_log(command: Union[str, Sequence[str]]) -> subprocess.Popen:
 	The ``command`` with :class:`python:subprocess.Popen`, printing any stdout from the command.
 
 	:param command: The command to run
-	:type command: str or list of str
 
 	:return:
-	:rtype: subprocess.Popen
 	"""
 
 	process = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
 
 	if process is not None:
-		for line in iter(process.stdout.readline, b""):  # type: ignore
+		for line in iter(process.stdout.readline, b''):  # type: ignore
 			print(_newline_re.sub('', line.decode("UTF-8")))
 
 	return process

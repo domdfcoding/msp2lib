@@ -47,10 +47,12 @@ from .utils import (
 # TODO: windows version
 # TODO: ability to run multiple jobs in the same container, rather than starting and stopping them
 
+PathLike = Union[str, pathlib.Path, os.PathLike]
+
 
 def msp2lib(
-		msp_file: Union[str, pathlib.Path, os.PathLike],
-		output_dir: Union[str, pathlib.Path, os.PathLike],
+		msp_file: PathLike,
+		output_dir: PathLike,
 		lib_name: Optional[str] = None,
 		):
 	"""
@@ -85,8 +87,8 @@ def msp2lib(
 
 
 def _run_docker(
-		input_dir: Union[str, pathlib.Path, os.PathLike],
-		output_dir: Union[str, pathlib.Path, os.PathLike],
+		input_dir: PathLike,
+		output_dir: PathLike,
 		):
 	"""
 	Launch the docker container.
@@ -99,7 +101,7 @@ def _run_docker(
 	:type output_dir: str or pathlib.Path
 
 	On Unix, the return value is the exit status of the process encoded in the
-	format specified for :fun:`python:os.wait()`. Note that POSIX does not specify
+	format specified for :func:`python:os.wait()`. Note that POSIX does not specify
 	the meaning of the return value of the C system() function, so the return value
 	is system-dependent.
 
@@ -127,20 +129,20 @@ def main():
 	import argparse
 
 	parser = argparse.ArgumentParser(description=__doc__)
-	parser.add_argument('input_file', help='The MSP file to convert.', nargs="?")
-	parser.add_argument('output_dir', help='The directory to save the output library in.', nargs="?")
+	parser.add_argument("input_file", help="The MSP file to convert.", nargs='?')
+	parser.add_argument("output_dir", help="The directory to save the output library in.", nargs='?')
 
 	parser.add_argument(
-		'--version', dest="version", action="store_true", default=False,
-		help='Show the version number and exit.')  # yapf: disable
+		"--version", dest="version", action="store_true", default=False,
+		help="Show the version number and exit.")  # yapf: disable
 
 	parser.add_argument(
-		'--get-docker-image', dest="get_image", action="store_true", default=False,
-		help='Download the docker image now rather than at first run, then exit.')  # yapf: disable
+		"--get-docker-image", dest="get_image", action="store_true", default=False,
+		help="Download the docker image now rather than at first run, then exit.")  # yapf: disable
 
 	parser.add_argument(
-		'--build-docker-image', dest="build_image", action="store_true", default=False,
-		help='Build the docker image from the Dockerfile, then exit.')  # yapf: disable
+		"--build-docker-image", dest="build_image", action="store_true", default=False,
+		help="Build the docker image from the Dockerfile, then exit.")  # yapf: disable
 
 	args = parser.parse_args()
 
