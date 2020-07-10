@@ -7,7 +7,7 @@ msp2lib
 This is a Python script to facilitate conversion from MSP files to NIST MS Search user libraries.
 
 
-.. start shields 
+.. start shields
 
 .. list-table::
 	:stub-columns: 1
@@ -29,7 +29,7 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 .. |docs| image:: https://img.shields.io/readthedocs/msp2lib/latest?logo=read-the-docs
 	:target: https://msp2lib.readthedocs.io/en/latest/?badge=latest
 	:alt: Documentation Status
-	
+
 .. |docs_check| image:: https://github.com/domdfcoding/msp2lib/workflows/Docs%20Check/badge.svg
 	:target: https://github.com/domdfcoding/msp2lib/actions?query=workflow%3A%22Docs+Check%22
 	:alt: Docs Check Status
@@ -50,7 +50,7 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	:target: https://pypi.org/project/msp2lib/
 	:alt: PyPI - Package Version
 
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/msp2lib
+.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/msp2lib?logo=python&logoColor=white
 	:target: https://pypi.org/project/msp2lib/
 	:alt: PyPI - Supported Python Versions
 
@@ -63,8 +63,8 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	:alt: PyPI - Wheel
 
 .. |license| image:: https://img.shields.io/github/license/domdfcoding/msp2lib
-	:alt: License
 	:target: https://github.com/domdfcoding/msp2lib/blob/master/LICENSE
+	:alt: License
 
 .. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/msp2lib
 	:alt: GitHub top language
@@ -82,11 +82,11 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 
 .. |docker_build| image:: https://img.shields.io/docker/cloud/build/domdfcoding/lib2nist-wine?label=build&logo=docker
 	:target: https://hub.docker.com/r/domdfcoding/lib2nist-wine
-	:alt: Docker Cloud Build Status
+	:alt: Docker Hub Build Status
 
 .. |docker_automated| image:: https://img.shields.io/docker/cloud/automated/domdfcoding/lib2nist-wine?label=build&logo=docker
 	:target: https://hub.docker.com/r/domdfcoding/lib2nist-wine/builds
-	:alt: Docker Cloud Automated build
+	:alt: Docker Hub Automated build
 
 .. |docker_size| image:: https://img.shields.io/docker/image-size/domdfcoding/lib2nist-wine?label=image%20size&logo=docker
 	:target: https://hub.docker.com/r/domdfcoding/lib2nist-wine
