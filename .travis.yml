@@ -1,4 +1,5 @@
 # This file is managed by `repo_helper`. Don't edit it directly
+---
 
 language: python
 dist: xenial
@@ -40,15 +41,3 @@ jobs:
           secure: JHMpHZo87XPAfrFDd4C4UjToFrxjE9PVYuXbWyspDmA6gWpfPCWd0ZHGFfUZjBW/oiBrXU/DjnLUhY9M2UHwBrj/o90z6+rzdyp0BmB1q4WQ4FAjftpyjn0hCW5O4UjqT2Att5I+VfewAkM1SOsSYBJJB0l+mNAQ3emjepjJJPai8mXZB9/rhDmSn/8jUX79vuWpOqVx4NKEtKUG+62J0FPlSRngJPYcfJYSjdH4T0sAP9afVUVQqYOg294m2ye7ZPmcug2Dr+MPNG4F77CoAszpj4oGHPzrS27BmR0I8uMDsYFm3PiFn1lru/UzI1aKvJ4YCaZ1kN2NuXXCkr3gM/Q5kgtEh/Bft0dzP4Auihm5svg1hHXzOXmIrBsosfczgDFUZrhZk7awqPnx4Y0goivfgIwY7fXZuZGRLZUyWYZ18R+VWBFn9jQyEricUX7dQYk61A6CB6aVNaPg/tSaV4TV8k4sqiEfWoqR1AjZuyjS4cGDexd4xiuoKi/r6PelGoXJeQAKZUQX5DVkTONiheOdhy8yNQnsQYb5jJPGlMI56G1dn5sseH2UmXb90xd4frdg9Fa/5DTxSL6fzowWCrDlr4gcS+4JVgvnr5I9hwH4p4xrT5Wp+IIwFplQwpQ15mCoau1Ptqsmv3DBNtCJg3tbo4KEYuI9zFBDyXspycg=
         distributions: "sdist bdist_wheel"
         skip_existing: true
-
-
-    - stage: deploy_releases
-      python: "3.6"
-      install:
-        - pip install PyGithub requests
-      script: skip
-      deploy:
-        on:
-          repo: domdfcoding/msp2lib
-        provider: script
-        script: python .ci/copy_pypi_2_github.py || return 1;

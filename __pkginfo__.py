@@ -50,7 +50,7 @@ pypi_name = "msp2lib"
 import_name = "msp2lib"
 py_modules = []
 entry_points = {
-		"console_scripts": ['msp2lib=msp2lib:main']
+		"console_scripts": ['msp2lib=msp2lib:main'],
 		}
 
 __license__ = "GNU Lesser General Public License v3 or later (LGPLv3+)"
