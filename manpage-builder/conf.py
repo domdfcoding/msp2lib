@@ -40,7 +40,4 @@ html_context = {"conf_py_path": "/"}
 
 htmlhelp_basename = slug
 
-man_pages = [
-		(master_doc, slug, project, [author], 1)
-		]
-
+man_pages = [(master_doc, slug, project, [author], 1)]

@@ -12,4 +12,3 @@ echo "Lib2NIST Log:"
 cat /lib2nist.log
 
 echo "\nDone!"
-

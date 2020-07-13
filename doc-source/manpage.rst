@@ -80,4 +80,3 @@ Reporting Bugs
 ---------------
 
 Please use the GitHub issue tracker to report bugs: <`https://github.com/domdfcoding/msp2lib/issues <https://github.com/domdfcoding/rsc-on-this-day/issues>`_>
-
