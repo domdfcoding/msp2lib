@@ -41,7 +41,8 @@ travis_pypi_secure: "JHMpHZo87XPAfrFDd4C4UjToFrxjE9PVYuXbWyspDmA6gWpfPCWd0ZHGFfU
 # additional lines for MANIFEST.in
 manifest_additional:
   - "include msp2lib.1"
-  - "recursive-include msp2lib *"
+  - "include msp2lib/Dockerfile"
+  - "include msp2lib/make_nistlib.sh"
 
 classifiers:
   - "Development Status :: 3 - Alpha"

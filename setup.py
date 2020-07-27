@@ -1,17 +1,19 @@
 #!/usr/bin/env python
-"""Setup script"""
+# This file is managed by 'repo_helper'. Don't edit it directly.
 
+# stdlib
 import os
 import pathlib
 import sys
 import warnings
 
-from setuptools import find_packages, setup
+# 3rd party
+from setuptools import setup
 
-from __pkginfo__ import (
-	__license__, __version__, author, author_email, classifiers, entry_points, install_requires, long_description,
-	modname, py_modules, short_desc, web,
-	)
+sys.path.append('.')
+
+# this package
+from __pkginfo__ import *  # pylint: disable=wildcard-import
 
 if not pathlib.Path("msp2lib.1").is_file():
 	warnings.warn("manpage not found. Trying to build now.")
@@ -20,24 +22,11 @@ if not pathlib.Path("msp2lib.1").is_file():
 		sys.exit(exit_code)
 
 setup(
-		author=author,
-		author_email=author_email,
-		classifiers=classifiers,
-		description=short_desc,
-		entry_points=entry_points,
+		description="Convert an MSP file representing one or more Mass Spectra to a NIST MS Search user library.",
+		extras_require=extras_require,
 		install_requires=install_requires,
-		license=__license__,
-		long_description=long_description,
-		name=modname,
-		packages=find_packages(exclude=("tests",)),
-		py_modules=py_modules,
-		url=web,
+		py_modules=[],
 		version=__version__,
-		package_data={modname: [
-				str(pathlib.Path(".") / modname / "Dockerfile"),
-				str(pathlib.Path(".") / modname / "make_nistlib.sh"),
-				]},
-		include_package_data=True,
 		)
 
 # TODO: include manpage in wheel and put in right place on filesystem
