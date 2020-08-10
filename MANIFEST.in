@@ -1,7 +1,7 @@
 include __pkginfo__.py
 include LICENSE
 include requirements.txt
-recursive-exclude **/__pycache__ *
+prune **/__pycache__
 include msp2lib.1
 include msp2lib/Dockerfile
 include msp2lib/make_nistlib.sh

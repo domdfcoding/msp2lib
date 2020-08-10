@@ -44,9 +44,9 @@ modname = "msp2lib"
 pypi_name = "msp2lib"
 import_name = "msp2lib"
 __license__ = "GNU Lesser General Public License v3 or later (LGPLv3+)"
-short_desc = "Convert an MSP file representing one or more Mass Spectra to a NIST MS Search user library."
-__author__ = author = "Dominic Davis-Foster"
-author_email = "dominic@davis-foster.co.uk"
+short_desc = 'Convert an MSP file representing one or more Mass Spectra to a NIST MS Search user library.'
+__author__ = author = 'Dominic Davis-Foster'
+author_email = 'dominic@davis-foster.co.uk'
 github_username = "domdfcoding"
 web = github_url = "https://github.com/domdfcoding/msp2lib"
 repo_root = pathlib.Path(__file__).parent
