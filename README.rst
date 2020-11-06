@@ -16,7 +16,7 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	* - Docs
 	  - |docs| |docs_check|
 	* - Tests
-	  - |travis| |codefactor|
+	  - |travis| |codefactor| |pre_commit_ci|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
@@ -28,7 +28,7 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 
 .. |docs| image:: https://img.shields.io/readthedocs/msp2lib/latest?logo=read-the-docs
 	:target: https://msp2lib.readthedocs.io/en/latest/?badge=latest
-	:alt: Documentation Status
+	:alt: Documentation Build Status
 
 .. |docs_check| image:: https://github.com/domdfcoding/msp2lib/workflows/Docs%20Check/badge.svg
 	:target: https://github.com/domdfcoding/msp2lib/actions?query=workflow%3A%22Docs+Check%22
@@ -95,6 +95,10 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 .. |pre_commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
 	:target: https://github.com/pre-commit/pre-commit
 	:alt: pre-commit
+
+.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/domdfcoding/msp2lib/master.svg
+	:target: https://results.pre-commit.ci/latest/github/domdfcoding/msp2lib/master
+	:alt: pre-commit.ci status
 
 .. end shields
 

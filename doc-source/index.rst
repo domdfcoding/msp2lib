@@ -16,7 +16,7 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	* - Docs
 	  - |docs| |docs_check|
 	* - Tests
-	  - |travis| |codefactor|
+	  - |travis| |codefactor| |pre_commit_ci|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
@@ -26,58 +26,61 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	* - Other
 	  - |license| |language| |requires| |pre_commit|
 
-.. |docs| image:: https://img.shields.io/readthedocs/msp2lib/latest?logo=read-the-docs
-	:target: https://msp2lib.readthedocs.io/en/latest/?badge=latest
-	:alt: Documentation Status
+.. |docs| rtfd-shield::
+	:project: msp2lib
+	:alt: Documentation Build Status
 
-.. |docs_check| image:: https://github.com/domdfcoding/msp2lib/workflows/Docs%20Check/badge.svg
-	:target: https://github.com/domdfcoding/msp2lib/actions?query=workflow%3A%22Docs+Check%22
+.. |docs_check| actions-shield::
+	:workflow: Docs Check
 	:alt: Docs Check Status
 
-.. |travis| image:: https://img.shields.io/travis/com/domdfcoding/msp2lib/master?logo=travis
-	:target: https://travis-ci.com/domdfcoding/msp2lib
+.. |travis| travis-shield::
+	:travis-site: com
 	:alt: Travis Build Status
 
-.. |requires| image:: https://requires.io/github/domdfcoding/msp2lib/requirements.svg?branch=master
-	:target: https://requires.io/github/domdfcoding/msp2lib/requirements/?branch=master
+.. |requires| requires-io-shield::
 	:alt: Requirements Status
 
-.. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/msp2lib?logo=codefactor
-	:target: https://www.codefactor.io/repository/github/domdfcoding/msp2lib
+.. |codefactor| codefactor-shield::
 	:alt: CodeFactor Grade
 
-.. |pypi-version| image:: https://img.shields.io/pypi/v/msp2lib
-	:target: https://pypi.org/project/msp2lib/
+.. |pypi-version| pypi-shield::
+	:project: msp2lib
+	:version:
 	:alt: PyPI - Package Version
 
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/msp2lib?logo=python&logoColor=white
-	:target: https://pypi.org/project/msp2lib/
+.. |supported-versions| pypi-shield::
+	:project: msp2lib
+	:py-versions:
 	:alt: PyPI - Supported Python Versions
 
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/msp2lib
-	:target: https://pypi.org/project/msp2lib/
+.. |supported-implementations| pypi-shield::
+	:project: msp2lib
+	:implementations:
 	:alt: PyPI - Supported Implementations
 
-.. |wheel| image:: https://img.shields.io/pypi/wheel/msp2lib
-	:target: https://pypi.org/project/msp2lib/
+.. |wheel| pypi-shield::
+	:project: msp2lib
+	:wheel:
 	:alt: PyPI - Wheel
 
-.. |license| image:: https://img.shields.io/github/license/domdfcoding/msp2lib
-	:target: https://github.com/domdfcoding/msp2lib/blob/master/LICENSE
+.. |license| github-shield::
+	:license:
 	:alt: License
 
-.. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/msp2lib
+.. |language| github-shield::
+	:top-language:
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/msp2lib/v0.1.3
-	:target: https://github.com/domdfcoding/msp2lib/pulse
+.. |commits-since| github-shield::
+	:commits-since: v0.1.3
 	:alt: GitHub commits since tagged version
 
-.. |commits-latest| image:: https://img.shields.io/github/last-commit/domdfcoding/msp2lib
-	:target: https://github.com/domdfcoding/msp2lib/commit/master
+.. |commits-latest| github-shield::
+	:last-commit:
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2020
+.. |maintained| maintained-shield:: 2020
 	:alt: Maintenance
 
 .. |docker_build| image:: https://img.shields.io/docker/cloud/build/domdfcoding/lib2nist-wine?label=build&logo=docker
@@ -92,9 +95,11 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	:target: https://hub.docker.com/r/domdfcoding/lib2nist-wine
 	:alt: Docker Image Size
 
-.. |pre_commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
-	:target: https://github.com/pre-commit/pre-commit
+.. |pre_commit| pre-commit-shield::
 	:alt: pre-commit
+
+.. |pre_commit_ci| pre-commit-ci-shield::
+	:alt: pre-commit.ci status
 
 .. end shields
 
@@ -103,20 +108,9 @@ Installation
 
 .. start installation
 
-.. tabs::
-
-	.. tab:: from PyPI
-
-		.. prompt:: bash
-
-			python3 -m pip install msp2lib --user
-
-
-	.. tab:: from GitHub
-
-		.. prompt:: bash
-
-			python3 -m pip install git+https://github.com/domdfcoding/msp2lib@master --user
+.. installation:: msp2lib
+	:pypi:
+	:github:
 
 .. end installation
 
