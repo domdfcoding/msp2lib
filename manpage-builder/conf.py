@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
+# stdlib
 import os
-import sys
 import re
+import sys
 
 sys.path.append(os.path.abspath('.'))
 sys.path.append(os.path.abspath('..'))
 
+# this package
 from __pkginfo__ import __version__
 
 copyright = (
