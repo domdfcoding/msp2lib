@@ -34,9 +34,9 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	:workflow: Docs Check
 	:alt: Docs Check Status
 
-.. |travis| travis-shield::
-	:travis-site: com
-	:alt: Travis Build Status
+.. |travis| actions-shield::
+	:workflow: Linux Tests
+	:alt: Linux Test Status
 
 .. |requires| requires-io-shield::
 	:alt: Requirements Status
