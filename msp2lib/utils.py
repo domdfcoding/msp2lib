@@ -34,6 +34,8 @@ from typing import Sequence, Tuple, Union
 # this package
 from msp2lib import __copyright__, __version__
 
+__all__ = ["about", "build_docker_image", "download_docker_image", "subprocess_with_log", "test_docker", "version"]
+
 
 def test_docker():
 	"""

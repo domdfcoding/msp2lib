@@ -6,7 +6,7 @@ import re
 import sys
 
 sys.path.append(os.path.abspath('.'))
-sys.path.append(os.path.abspath('..'))
+sys.path.append(os.path.abspath(".."))
 
 # this package
 from __pkginfo__ import __version__
@@ -21,23 +21,23 @@ copyright = (
 author = "Dominic Davis-Foster"
 project = "msp2lib"
 release = version = f"{project} {__version__}"
-language = 'en'
+language = "en"
 slug = re.sub(r'\W+', '-', project.lower())
 
-master_doc = 'manpage'
+master_doc = "manpage"
 
 extensions = [
-		'sphinx.ext.intersphinx',
-		'sphinx.ext.autodoc',
-		'sphinx.ext.mathjax',
-		'sphinx.ext.viewcode',
-		'sphinxcontrib.httpdomain',
+		"sphinx.ext.intersphinx",
+		"sphinx.ext.autodoc",
+		"sphinx.ext.mathjax",
+		"sphinx.ext.viewcode",
+		"sphinxcontrib.httpdomain",
 		]
 
-source_suffix = '.rst'
+source_suffix = ".rst"
 exclude_patterns = []
 
-html_context = {"conf_py_path": "/"}
+html_context = {"conf_py_path": '/'}
 
 htmlhelp_basename = slug
 

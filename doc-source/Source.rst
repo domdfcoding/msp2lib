@@ -3,7 +3,7 @@ Downloading source code
 =========================
 
 The ``msp2lib`` source code is available on GitHub,
-and can be accessed from the following URL: https://github.com/domdfcoding/msp2lib"
+and can be accessed from the following URL: https://github.com/domdfcoding/msp2lib
 
 If you have ``git`` installed, you can clone the repository with the following command:
 
