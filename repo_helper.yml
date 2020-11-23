@@ -74,3 +74,6 @@ sphinx_html_theme: furo
 #  - "    sys.exit(exit_code)"
 
 # TODO: include manpage in wheel and put in right place on filesystem
+
+extra_sphinx_extensions:
+ - sphinx_click

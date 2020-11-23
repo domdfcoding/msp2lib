@@ -34,32 +34,22 @@ from typing import Sequence, Tuple, Union
 # this package
 from msp2lib import __copyright__, __version__
 
-__all__ = ["about", "build_docker_image", "download_docker_image", "subprocess_with_log", "test_docker", "version"]
+__all__ = ["about", "build_docker_image", "download_docker_image", "subprocess_with_log", "test_docker"]
 
 
-def test_docker():
+def test_docker() -> bool:
 	"""
 	Returns whether Docker is installed on the system
 
-	:return: ``True`` if Docker is installed, ``False`` otherwise.
-	:rtype: bool
+	:return: :py:obj:`True` if Docker is installed, :py:obj:`False` otherwise.
 	"""
 
 	return bool(distutils.spawn.find_executable("docker"))
 
 
-def version() -> str:
-	"""
-	Prints the version number of msp2lib
-	"""
-
-	print(__version__)
-	return __version__
-
-
 def about() -> str:
 	"""
-	Prints information about msp2lib
+	Prints information about ``msp2lib``.
 	"""
 
 	about_text = f"""msp2lib Version {__version__} Copyright (C) {__copyright__}
@@ -96,11 +86,9 @@ def _ask_existing_lib(lib_name: str) -> bool:
 	Asks the user whether they wish to remove an existing library that exists with the same name.
 
 	:param lib_name: The name of the library that already exists
-	:type lib_name: str
 
-	:return: ``True`` if the user responded with ``y`` to indicate they wish to remove
-		the existing library, ``False`` otherwise.
-	:rtype: bool
+	:return: :py:obj:`True` if the user responded with ``y`` to indicate they wish to remove
+		the existing library, :py:obj:`False` otherwise.
 	"""
 
 	print(f"\nA library already exists in the output location with the name '{lib_name}'.")
@@ -111,25 +99,23 @@ def download_docker_image() -> int:
 	"""
 	Pull the lib2nist-wine docker image from dockerhub.
 
-	:return: The return code of the ``docker pull`` command
-	:rtype: int
+	:return: The return code of the ``docker pull`` command.
 	"""
 
 	process = subprocess_with_log("docker pull domdfcoding/lib2nist-wine")
-	return int(process.returncode)
+	return int(process.returncode or 0)
 
 
 def build_docker_image() -> int:
 	"""
 	Build the lib2nist-wine docker image from the Dockerfile.
 
-	:return: The return code of the ``docker build`` command
-	:rtype: int
+	:return: The return code of the ``docker build`` command.
 	"""
 
 	pkg_dir = pathlib.Path(__file__).parent.absolute()
 	process = subprocess_with_log(f"docker build --no-cache -t domdfcoding/lib2nist-wine {pkg_dir}/.")
-	return int(process.returncode)
+	return int(process.returncode or 0)
 
 
 _newline_re = re.compile(r"\n$")
@@ -140,8 +126,6 @@ def subprocess_with_log(command: Union[str, Sequence[str]]) -> subprocess.Popen:
 	The ``command`` with :class:`python:subprocess.Popen`, printing any stdout from the command.
 
 	:param command: The command to run
-
-	:return:
 	"""
 
 	process = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)

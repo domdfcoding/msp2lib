@@ -106,6 +106,12 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 Installation
 ----------------
 
+.. TODO: explain installing docker
+
+Before installing ``msp2lib``, ensure you have a working Docker installation.
+For more information visit https://docs.docker.com/get-docker/ for more information.
+
+
 .. start installation
 
 .. installation:: msp2lib
@@ -124,7 +130,7 @@ Installation
 	:caption: Documentation
 
 	docs
-	Manpage<manpage>
+	usage
 	contributing
 	Source
 

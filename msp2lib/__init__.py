@@ -26,8 +26,8 @@ Docker must be installed to use this program.
 #
 
 # this package
-from .core import main, msp2lib
-from .utils import about, build_docker_image, download_docker_image, subprocess_with_log, test_docker, version
+from .core import msp2lib
+from .utils import about, build_docker_image, download_docker_image, subprocess_with_log, test_docker
 
 __author__ = "Dominic Davis-Foster"
 __copyright__ = "2020 Dominic Davis-Foster"

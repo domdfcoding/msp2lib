@@ -35,27 +35,19 @@ by running with the ``--get-docker-image`` flag.
 import os
 import pathlib
 import shutil
-import sys
 import tempfile
-from typing import Optional, Union
+from typing import Optional
+
+# 3rd party
+from domdf_python_tools.typing import PathLike
 
 # this package
-from .utils import (
-		_ask_existing_lib,
-		_prep_workdirs,
-		about,
-		build_docker_image,
-		download_docker_image,
-		test_docker,
-		version
-		)
+from .utils import _prep_workdirs
 
-__all__ = ["main", "msp2lib"]
+__all__ = ["msp2lib"]
 
 # TODO: windows version
 # TODO: ability to run multiple jobs in the same container, rather than starting and stopping them
-
-PathLike = Union[str, pathlib.Path, os.PathLike]
 
 
 def msp2lib(
@@ -126,77 +118,3 @@ def _run_docker(
 			f"--env USER_UID={os.getuid()} domdfcoding/lib2nist-wine "
 			"/make_nistlib.sh"
 			)
-
-
-def main():
-	"""
-	Entry point for running from the command line.
-	"""
-
-	# stdlib
-	import argparse
-
-	parser = argparse.ArgumentParser(description=__doc__)
-	parser.add_argument("input_file", help="The MSP file to convert.", nargs='?')
-	parser.add_argument("output_dir", help="The directory to save the output library in.", nargs='?')
-
-	parser.add_argument(
-		"--version", dest="version", action="store_true", default=False,
-		help="Show the version number and exit.")  # yapf: disable
-
-	parser.add_argument(
-		"--get-docker-image", dest="get_image", action="store_true", default=False,
-		help="Download the docker image now rather than at first run, then exit.")  # yapf: disable
-
-	parser.add_argument(
-		"--build-docker-image", dest="build_image", action="store_true", default=False,
-		help="Build the docker image from the Dockerfile, then exit.")  # yapf: disable
-
-	args = parser.parse_args()
-
-	if args.version:
-		version()
-		sys.exit(0)
-
-	if not test_docker():
-		parser.error(
-				"""Docker installation not found. Please install Docker and try again.
-See https://docs.docker.com/get-docker/ for more information."""
-				)
-
-	if args.get_image:
-		sys.exit(download_docker_image())
-
-	elif args.build_image:
-		sys.exit(build_docker_image())
-
-	elif args.input_file:
-
-		about()
-
-		input_file = pathlib.Path(args.input_file).absolute()
-		lib_name = input_file.stem
-
-		if not input_file.is_file():
-			parser.error(f"Input file not found at the given path: {input_file}")
-
-		if args.output_dir:
-			output_dir = pathlib.Path(args.output_dir).absolute()
-		else:
-			output_dir = pathlib.Path.cwd().absolute()
-
-		if not output_dir.is_dir():
-			output_dir.mkdir(parents=True)
-
-		output_lib_dir = output_dir / lib_name
-
-		if output_lib_dir.exists():
-			if _ask_existing_lib(lib_name):
-				shutil.rmtree(output_lib_dir)
-			else:
-				sys.exit(0)
-
-		msp2lib(input_file, output_dir, lib_name)
-
-	else:
-		parser.error("Please specify an input file.")
