@@ -35,7 +35,7 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	:alt: Docs Check Status
 
 .. |travis| image:: https://github.com/domdfcoding/msp2lib/workflows/Linux%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/msp2lib/actions?query=workflow%3A%Linux+Tests%22
+	:target: https://github.com/domdfcoding/msp2lib/actions?query=workflow%3A%22Linux+Tests%22
 	:alt: Linux Test Status
 
 .. |requires| image:: https://requires.io/github/domdfcoding/msp2lib/requirements.svg?branch=master
