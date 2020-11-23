@@ -124,9 +124,9 @@ Installation
 	:caption: Documentation
 
 	docs
-	Source
-	Building
 	Manpage<manpage>
+	contributing
+	Source
 
 
 .. start links
