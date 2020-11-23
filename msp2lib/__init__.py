@@ -25,13 +25,12 @@ Docker must be installed to use this program.
 #  MA 02110-1301, USA.
 #
 
-__author__ = "Dominic Davis-Foster"
-__copyright__ = "2020 Dominic Davis-Foster"
-
-__license__ = "LGPLv3"
-__version__ = "0.1.3"
-__email__ = "dominic@davis-foster.co.uk"
-
 # this package
 from .core import main, msp2lib
 from .utils import about, build_docker_image, download_docker_image, subprocess_with_log, test_docker, version
+
+__author__ = "Dominic Davis-Foster"
+__copyright__ = "2020 Dominic Davis-Foster"
+__license__ = "LGPLv3"
+__version__ = "0.1.3"
+__email__ = "dominic@davis-foster.co.uk"
