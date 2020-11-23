@@ -10,9 +10,6 @@ short_desc: 'Convert an MSP file representing one or more Mass Spectra to a NIST
 enable_tests: False
 enable_conda: False
 
-exclude_files:
-#  - conf
-  - setup
 
 additional_ignore:
   - cache.db
@@ -64,3 +61,16 @@ keywords:
 
 docker_shields: True
 docker_name: lib2nist-wine
+
+standalone_contrib_guide: true
+sphinx_html_theme: furo
+#
+#setup_pre:
+#  - import os, pathlib, warnings
+#  - "if not pathlib.Path('msp2lib.1').is_file():"
+#  - "  warnings.warn('manpage not found. Trying to build now.')"
+#  - "  exit_code = os.system('./make_manpage.sh')"
+#  - "  if exit_code:"
+#  - "    sys.exit(exit_code)"
+
+# TODO: include manpage in wheel and put in right place on filesystem
