@@ -16,27 +16,37 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	* - Docs
 	  - |docs| |docs_check|
 	* - Tests
-	  - |travis| |codefactor| |pre_commit_ci|
+	  - |actions_linux|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
-	  - |commits-latest| |commits-since| |maintained|
+	  - |commits-latest| |commits-since| |maintained| |pypi-downloads|
+	* - QA
+	  - |codefactor| |actions_flake8| |actions_mypy| |pre_commit_ci|
 	* - Docker
 	  - |docker_build| |docker_automated| |docker_size|
 	* - Other
-	  - |license| |language| |requires| |pre_commit|
+	  - |license| |language| |requires|
 
 .. |docs| image:: https://img.shields.io/readthedocs/msp2lib/latest?logo=read-the-docs
-	:target: https://msp2lib.readthedocs.io/en/latest/?badge=latest
+	:target: https://msp2lib.readthedocs.io/en/latest
 	:alt: Documentation Build Status
 
 .. |docs_check| image:: https://github.com/domdfcoding/msp2lib/workflows/Docs%20Check/badge.svg
 	:target: https://github.com/domdfcoding/msp2lib/actions?query=workflow%3A%22Docs+Check%22
 	:alt: Docs Check Status
 
-.. |travis| image:: https://github.com/domdfcoding/msp2lib/workflows/Linux%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/msp2lib/actions?query=workflow%3A%22Linux+Tests%22
+.. |actions_linux| image:: https://github.com/domdfcoding/msp2lib/workflows/Linux/badge.svg
+	:target: https://github.com/domdfcoding/msp2lib/actions?query=workflow%3A%22Linux%22
 	:alt: Linux Test Status
+
+.. |actions_flake8| image:: https://github.com/domdfcoding/msp2lib/workflows/Flake8/badge.svg
+	:target: https://github.com/domdfcoding/msp2lib/actions?query=workflow%3A%22Flake8%22
+	:alt: Flake8 Status
+
+.. |actions_mypy| image:: https://github.com/domdfcoding/msp2lib/workflows/mypy/badge.svg
+	:target: https://github.com/domdfcoding/msp2lib/actions?query=workflow%3A%22mypy%22
+	:alt: mypy status
 
 .. |requires| image:: https://requires.io/github/domdfcoding/msp2lib/requirements.svg?branch=master
 	:target: https://requires.io/github/domdfcoding/msp2lib/requirements/?branch=master
@@ -80,6 +90,10 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 .. |maintained| image:: https://img.shields.io/maintenance/yes/2020
 	:alt: Maintenance
 
+.. |pypi-downloads| image:: https://img.shields.io/pypi/dm/msp2lib
+	:target: https://pypi.org/project/msp2lib/
+	:alt: PyPI - Downloads
+
 .. |docker_build| image:: https://img.shields.io/docker/cloud/build/domdfcoding/lib2nist-wine?label=build&logo=docker
 	:target: https://hub.docker.com/r/domdfcoding/lib2nist-wine
 	:alt: Docker Hub Build Status
@@ -91,10 +105,6 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 .. |docker_size| image:: https://img.shields.io/docker/image-size/domdfcoding/lib2nist-wine?label=image%20size&logo=docker
 	:target: https://hub.docker.com/r/domdfcoding/lib2nist-wine
 	:alt: Docker Image Size
-
-.. |pre_commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
-	:target: https://github.com/pre-commit/pre-commit
-	:alt: pre-commit
 
 .. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/domdfcoding/msp2lib/master.svg
 	:target: https://results.pre-commit.ci/latest/github/domdfcoding/msp2lib/master

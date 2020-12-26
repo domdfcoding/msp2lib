@@ -16,15 +16,17 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	* - Docs
 	  - |docs| |docs_check|
 	* - Tests
-	  - |travis| |codefactor| |pre_commit_ci|
+	  - |actions_linux|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
-	  - |commits-latest| |commits-since| |maintained|
+	  - |commits-latest| |commits-since| |maintained| |pypi-downloads|
+	* - QA
+	  - |codefactor| |actions_flake8| |actions_mypy| |pre_commit_ci|
 	* - Docker
 	  - |docker_build| |docker_automated| |docker_size|
 	* - Other
-	  - |license| |language| |requires| |pre_commit|
+	  - |license| |language| |requires|
 
 .. |docs| rtfd-shield::
 	:project: msp2lib
@@ -34,9 +36,17 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	:workflow: Docs Check
 	:alt: Docs Check Status
 
-.. |travis| actions-shield::
-	:workflow: Linux Tests
+.. |actions_linux| actions-shield::
+	:workflow: Linux
 	:alt: Linux Test Status
+
+.. |actions_flake8| actions-shield::
+	:workflow: Flake8
+	:alt: Flake8 Status
+
+.. |actions_mypy| actions-shield::
+	:workflow: mypy
+	:alt: mypy status
 
 .. |requires| requires-io-shield::
 	:alt: Requirements Status
@@ -83,6 +93,11 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 .. |maintained| maintained-shield:: 2020
 	:alt: Maintenance
 
+.. |pypi-downloads| pypi-shield::
+	:project: msp2lib
+	:downloads: month
+	:alt: PyPI - Downloads
+
 .. |docker_build| image:: https://img.shields.io/docker/cloud/build/domdfcoding/lib2nist-wine?label=build&logo=docker
 	:target: https://hub.docker.com/r/domdfcoding/lib2nist-wine
 	:alt: Docker Hub Build Status
@@ -94,9 +109,6 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 .. |docker_size| image:: https://img.shields.io/docker/image-size/domdfcoding/lib2nist-wine?label=image%20size&logo=docker
 	:target: https://hub.docker.com/r/domdfcoding/lib2nist-wine
 	:alt: Docker Image Size
-
-.. |pre_commit| pre-commit-shield::
-	:alt: pre-commit
 
 .. |pre_commit_ci| pre-commit-ci-shield::
 	:alt: pre-commit.ci status
