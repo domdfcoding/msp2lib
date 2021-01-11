@@ -2,7 +2,7 @@
 #
 #  utils.py
 """
-utilities for msp2lib
+utilities for ``msp2lib``.
 """
 #
 #  Copyright (c) 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
@@ -14,7 +14,7 @@ utilities for msp2lib
 #
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 #  GNU Lesser General Public License for more details.
 #
 #  You should have received a copy of the GNU Lesser General Public
@@ -37,12 +37,11 @@ from msp2lib import __copyright__, __version__
 __all__ = ["about", "build_docker_image", "download_docker_image", "subprocess_with_log", "test_docker", "version"]
 
 
-def test_docker():
+def test_docker() -> bool:
 	"""
-	Returns whether Docker is installed on the system
+	Returns whether Docker is installed on the system.
 
-	:return: ``True`` if Docker is installed, ``False`` otherwise.
-	:rtype: bool
+	:return: :py:obj:`True` if Docker is installed, :py:obj:`False` otherwise.
 	"""
 
 	return bool(distutils.spawn.find_executable("docker"))
@@ -50,7 +49,7 @@ def test_docker():
 
 def version() -> str:
 	"""
-	Prints the version number of msp2lib
+	Prints the version number of ``msp2lib``.
 	"""
 
 	print(__version__)
@@ -59,7 +58,7 @@ def version() -> str:
 
 def about() -> str:
 	"""
-	Prints information about msp2lib
+	Prints information about ``msp2lib``.
 	"""
 
 	about_text = f"""msp2lib Version {__version__} Copyright (C) {__copyright__}
@@ -96,11 +95,9 @@ def _ask_existing_lib(lib_name: str) -> bool:
 	Asks the user whether they wish to remove an existing library that exists with the same name.
 
 	:param lib_name: The name of the library that already exists
-	:type lib_name: str
 
-	:return: ``True`` if the user responded with ``y`` to indicate they wish to remove
-		the existing library, ``False`` otherwise.
-	:rtype: bool
+	:return: :py:obj:`True` if the user responded with ``y`` to indicate they wish to remove
+		the existing library, :py:obj:`False` otherwise.
 	"""
 
 	print(f"\nA library already exists in the output location with the name '{lib_name}'.")
