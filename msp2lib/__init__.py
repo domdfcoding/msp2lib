@@ -16,7 +16,7 @@ Docker must be installed to use this program.
 #
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 #  GNU Lesser General Public License for more details.
 #
 #  You should have received a copy of the GNU Lesser General Public
@@ -26,11 +26,19 @@ Docker must be installed to use this program.
 #
 
 # this package
-from .core import msp2lib
-from .utils import about, build_docker_image, download_docker_image, subprocess_with_log, test_docker
+from msp2lib.core import msp2lib
+from msp2lib.utils import about, build_docker_image, download_docker_image, test_docker
 
 __author__ = "Dominic Davis-Foster"
 __copyright__ = "2020 Dominic Davis-Foster"
 __license__ = "LGPLv3"
 __version__ = "0.1.3"
 __email__ = "dominic@davis-foster.co.uk"
+
+__all__ = [
+		"msp2lib",
+		"about",
+		"build_docker_image",
+		"download_docker_image",
+		"test_docker",
+		]

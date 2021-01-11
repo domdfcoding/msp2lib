@@ -63,7 +63,6 @@ def msp2lib(
 	:param output_dir: The directory to store the NIST User Library in
 	:param lib_name: The name of the NIST User Library. If ``None`` this will
 		be the filename of the MSP file without the extension.
-	:type lib_name: str, optional
 	"""
 
 	msp_file = pathlib.Path(msp_file)
@@ -95,10 +94,8 @@ def _run_docker(
 
 	:param input_dir: The path to the directory containing the input MSP file.
 		The input MSP file MUST be named `input.msp`
-	:type input_dir: str or pathlib.Path
 	:param output_dir: The path to the directory where docker will save the created library.
 		The new library will be named `input`, but can be renamed after creation.
-	:type output_dir: str or pathlib.Path
 
 	On Unix, the return value is the exit status of the process encoded in the
 	format specified for :func:`python:os.wait()`. Note that POSIX does not specify

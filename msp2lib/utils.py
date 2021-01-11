@@ -31,9 +31,6 @@ import re
 import subprocess
 from typing import Sequence, Tuple, Union
 
-# this package
-from msp2lib import __copyright__, __version__
-
 __all__ = ["about", "build_docker_image", "download_docker_image", "subprocess_with_log", "test_docker"]
 
 
@@ -51,6 +48,9 @@ def about() -> str:
 	"""
 	Prints information about ``msp2lib``.
 	"""
+
+	# this package
+	from msp2lib import __copyright__, __version__
 
 	about_text = f"""msp2lib Version {__version__} Copyright (C) {__copyright__}
 This program comes with ABSOLUTELY NO WARRANTY, to the extent permitted by law.

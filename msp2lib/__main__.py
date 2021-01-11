@@ -32,6 +32,7 @@ from typing import TYPE_CHECKING
 import click
 from click import version_option
 from consolekit import click_command
+from consolekit.commands import MarkdownHelpCommand
 
 # this package
 from msp2lib import __version__
@@ -92,17 +93,7 @@ def build_docker_image_callback(ctx: "Context", param: "Parameter", value: str):
 	sys.exit(build_docker_image())
 
 
-@click.argument("input_file")
-@click.argument("output_dir", type=click.STRING, default='.')
-@click.option(
-		"--get-docker-image",
-		is_eager=True,
-		is_flag=True,
-		default=False,
-		expose_value=False,
-		help="Download the docker image now rather than at first run, then exit.",
-		callback=get_docker_image_callback,
-		)
+@version_option(__version__)
 @click.option(
 		"--build-docker-image",
 		is_eager=True,
@@ -112,13 +103,23 @@ def build_docker_image_callback(ctx: "Context", param: "Parameter", value: str):
 		help="Build the docker image from the Dockerfile, then exit.",
 		callback=build_docker_image_callback,
 		)
-@version_option(__version__)
-@click_command()
+@click.option(
+		"--get-docker-image",
+		is_eager=True,
+		is_flag=True,
+		default=False,
+		expose_value=False,
+		help="Download the docker image now rather than at first run, then exit.",
+		callback=get_docker_image_callback,
+		)
+@click.argument("output_dir", type=click.STRING, default='.')
+@click.argument("input_file")
+@click_command(cls=MarkdownHelpCommand)
 def main(input_file: "PathLike", output_dir: "PathLike"):
 	"""
 	Convert INPUT_FILE to a NIST library and save the output in OUTPUT_DIR.
 
-	INPUT_FILE is a .msp file.
+	INPUT_FILE is a ``.msp`` file.
 	"""
 
 	# stdlib
