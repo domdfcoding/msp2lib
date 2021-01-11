@@ -109,7 +109,6 @@ def download_docker_image() -> int:
 	Pull the lib2nist-wine docker image from dockerhub.
 
 	:return: The return code of the ``docker pull`` command
-	:rtype: int
 	"""
 
 	process = subprocess_with_log("docker pull domdfcoding/lib2nist-wine")
@@ -121,7 +120,6 @@ def build_docker_image() -> int:
 	Build the lib2nist-wine docker image from the Dockerfile.
 
 	:return: The return code of the ``docker build`` command
-	:rtype: int
 	"""
 
 	pkg_dir = pathlib.Path(__file__).parent.absolute()

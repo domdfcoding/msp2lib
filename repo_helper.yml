@@ -28,11 +28,12 @@ python_versions:
   - '3.6'
   - '3.7'
   - '3.8'
+  - '3.9'
+  - '3.10-dev'
 
-travis_extra_install_post:
-  - "pip install -r manpage-builder/requirements.txt"
+#travis_extra_install_post:
+#  - "pip install -r manpage-builder/requirements.txt"
 
-# travis secure password for PyPI
 
 # additional lines for MANIFEST.in
 manifest_additional:
@@ -64,7 +65,7 @@ docker_name: lib2nist-wine
 
 standalone_contrib_guide: true
 sphinx_html_theme: furo
-#
+
 #setup_pre:
 #  - import os, pathlib, warnings
 #  - "if not pathlib.Path('msp2lib.1').is_file():"
