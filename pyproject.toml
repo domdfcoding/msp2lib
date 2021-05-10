@@ -2,4 +2,111 @@
 requires = [ "setuptools>=40.6.0", "wheel>=0.34.2",]
 build-backend = "setuptools.build_meta"
 
+[project]
+name = "msp2lib"
+version = "0.1.3"
+description = "Convert an MSP file representing one or more Mass Spectra to a NIST MS Search user library."
+readme = "README.rst"
+keywords = [ "chemistry", "docker", "mass-spectrometry", "wine",]
+dynamic = [ "requires-python", "classifiers", "dependencies",]
+
+[[project.authors]]
+name = "Dominic Davis-Foster"
+email = "dominic@davis-foster.co.uk"
+
+
 [tool.importcheck]
+
+[tool.mkrecipe]
+conda-channels = [ "domdfcoding",]
+extras = "all"
+license-key = "LGPL-3.0-or-later"
+
+[tool.sphinx-pyproject]
+github_username = "domdfcoding"
+github_repository = "msp2lib"
+author = "Dominic Davis-Foster"
+project = "msp2lib"
+copyright = "2020 Dominic Davis-Foster"
+language = "en"
+package_root = "msp2lib"
+extensions = [
+    "sphinx_toolbox",
+    "sphinx_toolbox.more_autodoc",
+    "sphinx_toolbox.more_autosummary",
+    "sphinx_toolbox.documentation_summary",
+    "sphinx_toolbox.tweaks.param_dash",
+    "sphinx_toolbox.tweaks.latex_toc",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.mathjax",
+    "sphinxcontrib.httpdomain",
+    "sphinxcontrib.extras_require",
+    "sphinx.ext.todo",
+    "sphinxemoji.sphinxemoji",
+    "notfound.extension",
+    "sphinx_copybutton",
+    "sphinxcontrib.default_values",
+    "sphinxcontrib.toctree_plus",
+    "sphinx_debuginfo",
+    "seed_intersphinx_mapping",
+]
+sphinxemoji_style = "twemoji"
+gitstamp_fmt = "%d %b %Y"
+templates_path = [ "_templates",]
+html_static_path = [ "_static",]
+source_suffix = ".rst"
+master_doc = "index"
+suppress_warnings = [ "image.nonlocal_uri",]
+pygments_style = "default"
+html_theme = "furo"
+html_theme_path = [ "../..",]
+html_show_sourcelink = true
+toctree_plus_types = [
+    "class",
+    "confval",
+    "data",
+    "directive",
+    "enum",
+    "exception",
+    "flag",
+    "function",
+    "method",
+    "namedtuple",
+    "protocol",
+    "role",
+    "typeddict",
+]
+add_module_names = false
+hide_none_rtype = true
+all_typevars = true
+overloads_location = "bottom"
+autodoc_exclude_members = [
+    "__dict__",
+    "__class__",
+    "__dir__",
+    "__weakref__",
+    "__module__",
+    "__annotations__",
+    "__orig_bases__",
+    "__parameters__",
+    "__subclasshook__",
+    "__init_subclass__",
+    "__attrs_attrs__",
+    "__init__",
+    "__new__",
+    "__getnewargs__",
+    "__abstractmethods__",
+    "__hash__",
+]
+
+[project.license]
+file = "LICENSE"
+
+[project.urls]
+Homepage = "https://github.com/domdfcoding/msp2lib"
+"Issue Tracker" = "https://github.com/domdfcoding/msp2lib/issues"
+"Source Code" = "https://github.com/domdfcoding/msp2lib"
+Documentation = "https://msp2lib.readthedocs.io/en/latest"
+
+[project.scripts]
+msp2lib = "msp2lib:main"

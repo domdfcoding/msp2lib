@@ -22,7 +22,7 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	* - Activity
 	  - |commits-latest| |commits-since| |maintained| |pypi-downloads|
 	* - QA
-	  - |codefactor| |actions_flake8| |actions_mypy| |pre_commit_ci|
+	  - |codefactor| |actions_flake8| |actions_mypy|
 	* - Docker
 	  - |docker_build| |docker_automated| |docker_size|
 	* - Other
@@ -105,10 +105,6 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 .. |docker_size| image:: https://img.shields.io/docker/image-size/domdfcoding/lib2nist-wine?label=image%20size&logo=docker
 	:target: https://hub.docker.com/r/domdfcoding/lib2nist-wine
 	:alt: Docker Image Size
-
-.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/domdfcoding/msp2lib/master.svg
-	:target: https://results.pre-commit.ci/latest/github/domdfcoding/msp2lib/master
-	:alt: pre-commit.ci status
 
 .. end shields
 
