@@ -9,109 +9,108 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 
 .. start shields
 
-.. list-table::
-	:stub-columns: 1
-	:widths: 10 90
+.. only:: html
 
-	* - Docs
-	  - |docs| |docs_check|
-	* - Tests
-	  - |actions_linux|
-	* - PyPI
-	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
-	* - Activity
-	  - |commits-latest| |commits-since| |maintained| |pypi-downloads|
-	* - QA
-	  - |codefactor| |actions_flake8| |actions_mypy| |pre_commit_ci|
-	* - Docker
-	  - |docker_build| |docker_automated| |docker_size|
-	* - Other
-	  - |license| |language| |requires|
+	.. list-table::
+		:stub-columns: 1
+		:widths: 10 90
 
-.. |docs| rtfd-shield::
-	:project: msp2lib
-	:alt: Documentation Build Status
+		* - Docs
+		  - |docs| |docs_check|
+		* - Tests
+		  - |actions_linux|
+		* - PyPI
+		  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
+		* - Activity
+		  - |commits-latest| |commits-since| |maintained| |pypi-downloads|
+		* - QA
+		  - |codefactor| |actions_flake8| |actions_mypy|
+		* - Docker
+		  - |docker_build| |docker_automated| |docker_size|
+		* - Other
+		  - |license| |language| |requires|
 
-.. |docs_check| actions-shield::
-	:workflow: Docs Check
-	:alt: Docs Check Status
+	.. |docs| rtfd-shield::
+		:project: msp2lib
+		:alt: Documentation Build Status
 
-.. |actions_linux| actions-shield::
-	:workflow: Linux
-	:alt: Linux Test Status
+	.. |docs_check| actions-shield::
+		:workflow: Docs Check
+		:alt: Docs Check Status
 
-.. |actions_flake8| actions-shield::
-	:workflow: Flake8
-	:alt: Flake8 Status
+	.. |actions_linux| actions-shield::
+		:workflow: Linux
+		:alt: Linux Test Status
 
-.. |actions_mypy| actions-shield::
-	:workflow: mypy
-	:alt: mypy status
+	.. |actions_flake8| actions-shield::
+		:workflow: Flake8
+		:alt: Flake8 Status
 
-.. |requires| requires-io-shield::
-	:alt: Requirements Status
+	.. |actions_mypy| actions-shield::
+		:workflow: mypy
+		:alt: mypy status
 
-.. |codefactor| codefactor-shield::
-	:alt: CodeFactor Grade
+	.. |requires| requires-io-shield::
+		:alt: Requirements Status
 
-.. |pypi-version| pypi-shield::
-	:project: msp2lib
-	:version:
-	:alt: PyPI - Package Version
+	.. |codefactor| codefactor-shield::
+		:alt: CodeFactor Grade
 
-.. |supported-versions| pypi-shield::
-	:project: msp2lib
-	:py-versions:
-	:alt: PyPI - Supported Python Versions
+	.. |pypi-version| pypi-shield::
+		:project: msp2lib
+		:version:
+		:alt: PyPI - Package Version
 
-.. |supported-implementations| pypi-shield::
-	:project: msp2lib
-	:implementations:
-	:alt: PyPI - Supported Implementations
+	.. |supported-versions| pypi-shield::
+		:project: msp2lib
+		:py-versions:
+		:alt: PyPI - Supported Python Versions
 
-.. |wheel| pypi-shield::
-	:project: msp2lib
-	:wheel:
-	:alt: PyPI - Wheel
+	.. |supported-implementations| pypi-shield::
+		:project: msp2lib
+		:implementations:
+		:alt: PyPI - Supported Implementations
 
-.. |license| github-shield::
-	:license:
-	:alt: License
+	.. |wheel| pypi-shield::
+		:project: msp2lib
+		:wheel:
+		:alt: PyPI - Wheel
 
-.. |language| github-shield::
-	:top-language:
-	:alt: GitHub top language
+	.. |license| github-shield::
+		:license:
+		:alt: License
 
-.. |commits-since| github-shield::
-	:commits-since: v0.1.3
-	:alt: GitHub commits since tagged version
+	.. |language| github-shield::
+		:top-language:
+		:alt: GitHub top language
 
-.. |commits-latest| github-shield::
-	:last-commit:
-	:alt: GitHub last commit
+	.. |commits-since| github-shield::
+		:commits-since: v0.1.3
+		:alt: GitHub commits since tagged version
 
-.. |maintained| maintained-shield:: 2021
-	:alt: Maintenance
+	.. |commits-latest| github-shield::
+		:last-commit:
+		:alt: GitHub last commit
 
-.. |pypi-downloads| pypi-shield::
-	:project: msp2lib
-	:downloads: month
-	:alt: PyPI - Downloads
+	.. |maintained| maintained-shield:: 2021
+		:alt: Maintenance
 
-.. |docker_build| image:: https://img.shields.io/docker/cloud/build/domdfcoding/lib2nist-wine?label=build&logo=docker
-	:target: https://hub.docker.com/r/domdfcoding/lib2nist-wine
-	:alt: Docker Hub Build Status
+	.. |pypi-downloads| pypi-shield::
+		:project: msp2lib
+		:downloads: month
+		:alt: PyPI - Downloads
 
-.. |docker_automated| image:: https://img.shields.io/docker/cloud/automated/domdfcoding/lib2nist-wine?label=build&logo=docker
-	:target: https://hub.docker.com/r/domdfcoding/lib2nist-wine/builds
-	:alt: Docker Hub Automated build
+	.. |docker_build| image:: https://img.shields.io/docker/cloud/build/domdfcoding/lib2nist-wine?label=build&logo=docker
+		:target: https://hub.docker.com/r/domdfcoding/lib2nist-wine
+		:alt: Docker Hub Build Status
 
-.. |docker_size| image:: https://img.shields.io/docker/image-size/domdfcoding/lib2nist-wine?label=image%20size&logo=docker
-	:target: https://hub.docker.com/r/domdfcoding/lib2nist-wine
-	:alt: Docker Image Size
+	.. |docker_automated| image:: https://img.shields.io/docker/cloud/automated/domdfcoding/lib2nist-wine?label=build&logo=docker
+		:target: https://hub.docker.com/r/domdfcoding/lib2nist-wine/builds
+		:alt: Docker Hub Automated build
 
-.. |pre_commit_ci| pre-commit-ci-shield::
-	:alt: pre-commit.ci status
+	.. |docker_size| image:: https://img.shields.io/docker/image-size/domdfcoding/lib2nist-wine?label=image%20size&logo=docker
+		:target: https://hub.docker.com/r/domdfcoding/lib2nist-wine
+		:alt: Docker Image Size
 
 .. end shields
 
@@ -143,8 +142,10 @@ Installation
 
 .. start links
 
-View the :ref:`Function Index <genindex>` or browse the `Source Code <_modules/index.html>`__.
+.. only:: html
 
-`Browse the GitHub Repository <https://github.com/domdfcoding/msp2lib>`__
+	View the :ref:`Function Index <genindex>` or browse the `Source Code <_modules/index.html>`__.
+
+	:github:repo:`Browse the GitHub Repository <domdfcoding/msp2lib>`
 
 .. end links
