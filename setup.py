@@ -21,6 +21,7 @@ setup(
 		description="Convert an MSP file representing one or more Mass Spectra to a NIST MS Search user library.",
 		extras_require=extras_require,
 		install_requires=install_requires,
+		name="msp2lib",
 		py_modules=[],
 		version=__version__,
 		)

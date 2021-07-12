@@ -140,6 +140,12 @@ Installation
 	Source
 
 
+.. sidebar-links::
+	:caption: Links
+	:github:
+	:pypi: msp2lib
+
+
 .. start links
 
 .. only:: html
