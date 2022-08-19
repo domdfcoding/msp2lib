@@ -50,7 +50,8 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 		:workflow: mypy
 		:alt: mypy status
 
-	.. |requires| requires-io-shield::
+	.. |requires| image:: https://dependency-dash.herokuapp.com/github/domdfcoding/msp2lib/badge.svg
+		:target: https://dependency-dash.herokuapp.com/github/domdfcoding/msp2lib/
 		:alt: Requirements Status
 
 	.. |codefactor| codefactor-shield::
@@ -92,7 +93,7 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 		:last-commit:
 		:alt: GitHub last commit
 
-	.. |maintained| maintained-shield:: 2021
+	.. |maintained| maintained-shield:: 2022
 		:alt: Maintenance
 
 	.. |pypi-downloads| pypi-shield::
@@ -138,6 +139,12 @@ Installation
 	Manpage<manpage>
 	contributing
 	Source
+
+
+.. sidebar-links::
+	:caption: Links
+	:github:
+	:pypi: msp2lib
 
 
 .. start links

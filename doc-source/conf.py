@@ -27,7 +27,8 @@ rst_prolog = f""".. |pkgname| replace:: msp2lib
 slug = re.sub(r'\W+', '-', project.lower())
 release = version = config.version
 
-todo_include_todos = bool(os.environ.get("SHOW_TODOS", 0))
+sphinx_builder = os.environ.get("SPHINX_BUILDER", "html").lower()
+todo_include_todos = int(os.environ.get("SHOW_TODOS", 0)) and sphinx_builder != "latex"
 
 intersphinx_mapping = {
 		"python": ("https://docs.python.org/3/", None),
@@ -65,5 +66,13 @@ autodoc_default_options = {
 		}
 
 latex_elements = {
-		"fncychap": "\\usepackage[Bjarne]{fncychap}\n\\ChNameAsIs\n\\ChTitleAsIs\n",
+		"printindex": "\\begin{flushleft}\n\\printindex\n\\end{flushleft}",
+		"tableofcontents": "\\pdfbookmark[0]{\\contentsname}{toc}\\sphinxtableofcontents",
 		}
+
+
+def setup(app):
+	# 3rd party
+	from sphinx_toolbox.latex import better_header_layout
+
+	app.connect("config-inited", lambda app, config: better_header_layout(config))
