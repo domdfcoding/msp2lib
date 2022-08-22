@@ -8,7 +8,7 @@ import sys
 sys.path.append(os.path.abspath('.'))
 sys.path.append(os.path.abspath(".."))
 
-# this package
+# 3rd party
 from __pkginfo__ import __version__
 
 copyright = (
