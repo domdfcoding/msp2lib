@@ -7,9 +7,8 @@ name = "msp2lib"
 version = "0.1.3"
 description = "Convert an MSP file representing one or more Mass Spectra to a NIST MS Search user library."
 readme = "README.rst"
-keywords = [ "chemistry", "docker", "mass-spectrometry", "wine",]
-dynamic = [ "dependencies",]
 requires-python = ">=3.6.1"
+keywords = [ "chemistry", "docker", "mass-spectrometry", "wine",]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Environment :: Console",
@@ -29,6 +28,7 @@ classifiers = [
     "Topic :: Utilities",
     "Typing :: Typed",
 ]
+dynamic = [ "dependencies",]
 
 [[project.authors]]
 name = "Dominic Davis-Foster"
