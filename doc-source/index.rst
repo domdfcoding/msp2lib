@@ -129,15 +129,15 @@ Installation
 .. toctree::
 	:hidden:
 
-	self
+	Home<self>
 
 .. toctree::
 	:maxdepth: 3
-	:caption: Documentation
 
 	docs
 	Manpage<manpage>
 	contributing
+	license
 	Source
 
 
