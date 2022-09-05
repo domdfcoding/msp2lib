@@ -50,8 +50,8 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 		:workflow: mypy
 		:alt: mypy status
 
-	.. |requires| image:: https://dependency-dash.herokuapp.com/github/domdfcoding/msp2lib/badge.svg
-		:target: https://dependency-dash.herokuapp.com/github/domdfcoding/msp2lib/
+	.. |requires| image:: https://dependency-dash.repo-helper.uk/github/domdfcoding/msp2lib/badge.svg
+		:target: https://dependency-dash.repo-helper.uk/github/domdfcoding/msp2lib/
 		:alt: Requirements Status
 
 	.. |codefactor| codefactor-shield::
