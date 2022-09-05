@@ -9,7 +9,7 @@ short_desc: 'Convert an MSP file representing one or more Mass Spectra to a NIST
 
 enable_tests: False
 enable_conda: False
-
+use_whey: true
 
 additional_ignore:
   - cache.db
