@@ -87,7 +87,7 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	:target: https://github.com/domdfcoding/msp2lib/commit/master
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2022
+.. |maintained| image:: https://img.shields.io/maintenance/yes/2023
 	:alt: Maintenance
 
 .. |pypi-downloads| image:: https://img.shields.io/pypi/dm/msp2lib
