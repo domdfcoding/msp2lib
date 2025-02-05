@@ -93,7 +93,7 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 		:last-commit:
 		:alt: GitHub last commit
 
-	.. |maintained| maintained-shield:: 2024
+	.. |maintained| maintained-shield:: 2025
 		:alt: Maintenance
 
 	.. |pypi-downloads| pypi-shield::
