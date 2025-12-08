@@ -21,7 +21,6 @@ platforms:
 console_scripts:
   - "msp2lib=msp2lib:main"
 
-python_deploy_version: 3.6
 
 # Versions to run tests for
 python_versions:
