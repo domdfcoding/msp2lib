@@ -26,8 +26,15 @@ Docker must be installed to use this program.
 #
 
 # this package
-from .core import main, msp2lib
-from .utils import about, build_docker_image, download_docker_image, subprocess_with_log, test_docker, version
+from .core import main, msp2lib  # noqa: F401
+from .utils import (  # noqa: F401
+		about,
+		build_docker_image,
+		download_docker_image,
+		subprocess_with_log,
+		test_docker,
+		version
+		)
 
 __author__ = "Dominic Davis-Foster"
 __copyright__ = "2020 Dominic Davis-Foster"

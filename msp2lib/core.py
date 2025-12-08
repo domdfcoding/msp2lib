@@ -62,7 +62,7 @@ def msp2lib(
 		msp_file: PathLike,
 		output_dir: PathLike,
 		lib_name: Optional[str] = None,
-		):
+		) -> None:
 	"""
 	Convert the provided MSP file to a NIST User Library, and store the newly
 	created library in the given output directory.
@@ -96,7 +96,7 @@ def msp2lib(
 def _run_docker(
 		input_dir: PathLike,
 		output_dir: PathLike,
-		):
+		) -> int:
 	"""
 	Launch the docker container.
 
@@ -125,7 +125,7 @@ def _run_docker(
 			)
 
 
-def main():
+def main() -> None:
 	"""
 	Entry point for running from the command line.
 	"""
