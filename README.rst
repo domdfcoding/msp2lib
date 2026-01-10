@@ -87,11 +87,11 @@ This is a Python script to facilitate conversion from MSP files to NIST MS Searc
 	:target: https://github.com/domdfcoding/msp2lib/commit/master
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2025
+.. |maintained| image:: https://img.shields.io/maintenance/yes/2026
 	:alt: Maintenance
 
 .. |pypi-downloads| image:: https://img.shields.io/pypi/dm/msp2lib
-	:target: https://pypi.org/project/msp2lib/
+	:target: https://pypistats.org/packages/msp2lib
 	:alt: PyPI - Downloads
 
 .. |docker_build| image:: https://img.shields.io/docker/cloud/build/domdfcoding/lib2nist-wine?label=build&logo=docker
