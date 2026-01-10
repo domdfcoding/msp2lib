@@ -121,7 +121,7 @@ def _run_docker(
 			f"-v '{input_dir}:/input' "
 			f"-v '{output_dir}:/output' "
 			f"--env USER_UID={os.getuid()} domdfcoding/lib2nist-wine "
-			"/make_nistlib.sh"
+			"/make_nistlib.sh",
 			)
 
 
@@ -139,15 +139,18 @@ def main() -> None:
 
 	parser.add_argument(
 		"--version", dest="version", action="store_true", default=False,
-		help="Show the version number and exit.")  # yapf: disable
+		help="Show the version number and exit.",
+	)  # yapf: disable
 
 	parser.add_argument(
 		"--get-docker-image", dest="get_image", action="store_true", default=False,
-		help="Download the docker image now rather than at first run, then exit.")  # yapf: disable
+		help="Download the docker image now rather than at first run, then exit.",
+	)  # yapf: disable
 
 	parser.add_argument(
 		"--build-docker-image", dest="build_image", action="store_true", default=False,
-		help="Build the docker image from the Dockerfile, then exit.")  # yapf: disable
+		help="Build the docker image from the Dockerfile, then exit.",
+	)  # yapf: disable
 
 	args = parser.parse_args()
 
@@ -158,7 +161,7 @@ def main() -> None:
 	if not test_docker():
 		parser.error(
 				"""Docker installation not found. Please install Docker and try again.
-See https://docs.docker.com/get-docker/ for more information."""
+See https://docs.docker.com/get-docker/ for more information.""",
 				)
 
 	if args.get_image:
