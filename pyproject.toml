@@ -124,7 +124,7 @@ base-classifiers = [
 python-versions = [ "3.6", "3.7", "3.8", "3.9", "3.10",]
 python-implementations = [ "CPython",]
 platforms = [ "Linux",]
-license-key = "LGPL-3.0-or-later"
+license-key = "LGPLv3+"
 additional-files = [ "include msp2lib.1", "include msp2lib/Dockerfile", "include msp2lib/make_nistlib.sh",]
 
 [tool.mypy]
